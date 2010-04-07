@@ -4,28 +4,28 @@
  * Vars : $commentPager
  */
 
-echo £o('div.comment.list_by_article');
+echo _open('div.comment.list_by_article');
 
  echo $commentPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($commentPager as $comment)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
-      echo £('p.author',
-        £('strong.mr10', $comment->name ? escape($comment->name) : escape('<anonymous>')).
-        £('span.quiet', format_datetime($comment->createdAt, 'f'))
+      echo _tag('p.author',
+        _tag('strong.mr10', $comment->name ? escape($comment->name) : escape('<anonymous>')).
+        _tag('span.quiet', format_datetime($comment->createdAt, 'f'))
       );
       
-      echo £('p', nl2br(escape($comment->text)));
+      echo _tag('p', nl2br(escape($comment->text)));
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $commentPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

@@ -1,3 +1,3 @@
 <?php
 
-echo £('nav', $menu);
+echo _tag('nav', $menu);

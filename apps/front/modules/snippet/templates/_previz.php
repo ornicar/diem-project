@@ -1,6 +1,6 @@
 <?php
 // Snippet : Previz
 
-echo £('h2.t_medium', __('Content previsualization'));
+echo _tag('h2.t_medium', __('Content previsualization'));
 
-echo £('div#snippet_previz_container.markdown');
+echo _tag('div#snippet_previz_container.markdown');

@@ -2,24 +2,24 @@
 // Community article : List
 // Vars : $communityArticlePager
 
-echo £o('div.community_article.list');
+echo _open('div.community_article.list');
 
  echo $communityArticlePager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($communityArticlePager as $communityArticle)
   {
-    echo £o('li.element.mb10.clickable');
+    echo _open('li.element.mb10.clickable');
     
-      echo £link($communityArticle->href)->text($communityArticle.'['.$communityArticle->language.']')->set('.block').
-£('span.quiet', $communityArticle->author.' - '.format_date($communityArticle->createdAt, 'D'));
+      echo _link($communityArticle->href)->text($communityArticle.'['.$communityArticle->language.']')->set('.block').
+_tag('span.quiet', $communityArticle->author.' - '.format_date($communityArticle->createdAt, 'D'));
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $communityArticlePager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

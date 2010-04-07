@@ -4,35 +4,35 @@
  * Vars : $sitePager
  */
 
-echo £o('div.site.list');
+echo _open('div.site.list');
 
  echo $sitePager->renderNavigationTop();
 
-  echo £o('ul.elements.clearfix');
+  echo _open('ul.elements.clearfix');
 
   $it = 1;
   foreach ($sitePager as $site)
   {
-    echo £o('li.element.clickable');
+    echo _open('li.element.clickable');
     
-      echo £('h2.t_medium', $site->name);
+      echo _tag('h2.t_medium', $site->name);
 
-      echo £('div.content.clearfix',
+      echo _tag('div.content.clearfix',
         ($site->Media
-          ? £link($site->url)->text(£media($site->Media)->alt($site->Media->legend ? $site->Media->legend : $site->name)->width(200))
+          ? _link($site->url)->text(_media($site->Media)->alt($site->Media->legend ? $site->Media->legend : $site->name)->width(200))
           : ''
         ).
         markdown($site->text).
-        £('p.version', 'Diem '.£('strong', $site->diemVersion))
+        _tag('p.version', 'Diem '._tag('strong', $site->diemVersion))
       );
       
-    echo £c('li');
+    echo _close('li');
 
-    if (++$it%2) echo £('li.clearboth');
+    if (++$it%2) echo _tag('li.clearboth');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $sitePager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

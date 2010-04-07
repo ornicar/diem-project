@@ -4,23 +4,23 @@
  * Vars : $articlePager
  */
 
-echo £o('nav.article.list_menu');
+echo _open('nav.article.list_menu');
 
  echo $articlePager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($articlePager as $article)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
-      echo £link($article)->title($article->resume);
+      echo _link($article)->title($article->resume);
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $articlePager->renderNavigationBottom();
 
-echo £c('nav');
+echo _close('nav');

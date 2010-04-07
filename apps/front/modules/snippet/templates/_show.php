@@ -2,20 +2,20 @@
 // Snippet : Show
 // Vars : $snippet
 
-echo £o('div.snippet.show');
+echo _open('div.snippet.show');
 
-  echo £('div.clearfix',
+  echo _tag('div.clearfix',
   
-    £link('@snippet_rss')
+    _link('@snippet_rss')
     ->text('Diem snippets syndication')
     ->title('Subscribe to the snippets feed')
     ->set('.rss_link').
 
-    £('h1.t_big', escape($snippet->name))
+    _tag('h1.t_big', escape($snippet->name))
   );
   
-  echo £('p.snippet_infos', £('span', format_date($snippet->createdAt, 'D')).' by '.escape($snippet->createdBy));
+  echo _tag('p.snippet_infos', _tag('span', format_date($snippet->createdAt, 'D')).' by '.escape($snippet->createdBy));
   
-  echo £('div.markdown', $snippetHtml);
+  echo _tag('div.markdown', $snippetHtml);
   
-echo £c('div');
+echo _close('div');

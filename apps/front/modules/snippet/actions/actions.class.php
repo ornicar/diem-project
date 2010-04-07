@@ -28,13 +28,13 @@ class snippetActions extends myFrontModuleActions
     {
       $item = new sfFeedItem();
       $item->setTitle($record->name);
-      $item->setLink($this->getHelper()->£link($record)->getAbsoluteHref());
+      $item->setLink($this->getHelper()->link($record)->getAbsoluteHref());
       $item->setAuthorName($record->createdBy);
       $item->setPubdate($record->getDateTimeObject('created_at')->format('U'));
       $item->setUniqueId($record->name.' ('.$record->id.')');
       
       $item->setDescription(
-        $record->getMarkdownText($this->context->get('markdown'))
+        $record->getMarkdownText($this->getService('markdown'))
       );
 
       $feed->addItem($item);
@@ -49,7 +49,7 @@ class snippetActions extends myFrontModuleActions
     
     $text = $request->getParameter('text');
     
-    return $this->renderText($this->context->get('markdown')->toHtml(dmString::escape($text, ENT_NOQUOTES)));
+    return $this->renderText($this->getService('markdown')->toHtml(dmString::escape($text, ENT_NOQUOTES)));
   }
 
   public function executeFormWidget(dmWebRequest $request)
@@ -126,7 +126,7 @@ class snippetActions extends myFrontModuleActions
   protected function getSnippetUrl(Snippet $snippet)
   {
     return $this->getHelper()
-    ->£link('snippet/modifyYourSnippet')
+    ->link('snippet/modifyYourSnippet')
     ->param('hash', $snippet->hash)
     ->getHref();
   }

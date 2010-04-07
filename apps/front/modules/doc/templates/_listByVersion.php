@@ -4,23 +4,23 @@
  * Vars : $docPager
  */
 
-echo £o('div.doc.list_by_version');
+echo _open('div.doc.list_by_version');
 
  echo $docPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($docPager as $doc)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
-      echo £link($doc);
+      echo _link($doc);
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $docPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

@@ -4,30 +4,30 @@
  * Vars : $articlePager
  */
 
-echo £o('div.article.list');
+echo _open('div.article.list');
 
  echo $articlePager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($articlePager as $article)
   {
-    echo £o('li.element.clickable').£o('article');
+    echo _open('li.element.clickable')._open('article');
     
-      echo £('h2.t_medium', $article->name);
+      echo _tag('h2.t_medium', $article->name);
       
-      echo £('p.article_infos',
-        £link($article)->text(__('» read more'))->set('.fright').
-        £('span', format_date($article->createdAt, 'D')).' by '.$article->CreatedBy
+      echo _tag('p.article_infos',
+        _link($article)->text(__('» read more'))->set('.fright').
+        _tag('span', format_date($article->createdAt, 'D')).' by '.$article->CreatedBy
       );
       
-      echo £('p', $article->resume);
+      echo _tag('p', $article->resume);
       
-    echo £c('article').£c('li');
+    echo _close('article')._close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $articlePager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

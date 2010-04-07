@@ -4,41 +4,41 @@
  * Vars : $docPager
  */
 
-echo £o('nav.doc.list_menu.menu');
+echo _open('nav.doc.list_menu.menu');
 
  echo $docPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($docPager as $doc)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
-      echo £link($doc);
+      echo _link($doc);
 
-      echo £o('ul');
+      echo _open('ul');
       foreach($doc->Pages as $page)
       {
-        echo £o('li');
+        echo _open('li');
         
-          echo £link($page)
+          echo _link($page)
           ->title($page->resume)
           ->text($page->name);
         
           if (dm_current($page))
           {
-            echo £('div.summary', $summary->render($page->moreRecentText));
+            echo _tag('div.summary', $summary->render($page->moreRecentText));
           }
           
-        echo £c('li');
+        echo _close('li');
       }
-      echo £c('ul');
+      echo _close('ul');
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $docPager->renderNavigationBottom();
 
-echo £c('nav');
+echo _close('nav');

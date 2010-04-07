@@ -4,28 +4,28 @@
  * Vars : $pluginCommentPager
  */
 
-echo £o('div.comment.list_by_plugin');
+echo _open('div.comment.list_by_plugin');
 
  echo $pluginCommentPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($pluginCommentPager as $pluginComment)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
-      echo £('p.author',
-        £('strong.mr10', $pluginComment->name ? escape($pluginComment->name) : escape('<anonymous>')).
-        £('span.quiet', format_datetime($pluginComment->createdAt, 'f'))
+      echo _tag('p.author',
+        _tag('strong.mr10', $pluginComment->name ? escape($pluginComment->name) : escape('<anonymous>')).
+        _tag('span.quiet', format_datetime($pluginComment->createdAt, 'f'))
       );
       
-      echo £('p', nl2br(escape($pluginComment->text)));
+      echo _tag('p', nl2br(escape($pluginComment->text)));
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $pluginCommentPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');
