@@ -112,8 +112,8 @@ class demoBuildTask extends dmContextTask
     $this->log('add disclaimer');
     $pageFile = $this->getDemoDir().'/apps/front/modules/dmFront/templates/pageSuccess.php';
     file_put_contents($pageFile, str_replace(
-      "\$helper->renderArea('top', '.clearfix').",
-      "\$helper->renderArea('top', '.clearfix')._tag('div.disclaimer', __('This is a <strong>DEMO</strong> site, reinitialized each day.').' '._link(str_replace('http://demo.', 'http://', \$sf_request->getUri()))->text(__('Go to the official Diem site'))).",
+      "\$helper->renderArea('layout.top', '.clearfix').",
+      "\$helper->renderArea('layout.top', '.clearfix')._tag('div.disclaimer', __('This is a <strong>DEMO</strong> site, reinitialized each day.').' '._link(str_replace('http://demo.', 'http://', \$sf_request->getUri()))->text(__('Go to the official Diem site'))).",
       file_get_contents($pageFile)
     ));
 
