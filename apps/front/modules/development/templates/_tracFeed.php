@@ -10,7 +10,7 @@ echo £o('ul');
 foreach($items as $item)
 {
   echo _tag('li.clickable',
-    £link($item->getLink())
+    _link($item->getLink())
     ->text($item->getTitle())
     ->set('.block').
     _tag('span.quiet.little',
@@ -19,7 +19,7 @@ foreach($items as $item)
       dmString::truncate(
         strip_tags($item->getDescription()),
         400,
-        £link($item->getLink())->text(' ...')->title(__('Read more')))
+        _link($item->getLink())->text(' ...')->title(__('Read more')))
     )
   );
 }

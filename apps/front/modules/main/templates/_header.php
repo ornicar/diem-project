@@ -2,20 +2,20 @@
 
 echo _tag('nav',
 
-  £link('main/download').
+  _link('main/download').
 
-  £link($demo)->text(__('Demo')).
+  _link($demo)->text(__('Demo')).
 
-  £link('plugin/list').
+  _link('plugin/list').
 
-  £link('tour/index').
+  _link('tour/index').
 
-  £link($doc)->text(__('Documentation')).
+  _link($doc)->text(__('Documentation')).
 
-  £link('article/list').
+  _link('article/list').
 
-  £link('main/community').
+  _link('main/community').
 
-  £link('main/development')
+  _link('main/development')
 
 );

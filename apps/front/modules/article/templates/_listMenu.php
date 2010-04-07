@@ -14,7 +14,7 @@ echo £o('nav.article.list_menu');
   {
     echo £o('li.element');
     
-      echo £link($article)->title($article->resume);
+      echo _link($article)->title($article->resume);
       
     echo £c('li');
   }

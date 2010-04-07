@@ -14,7 +14,7 @@ echo £o('div.snippet.list');
   foreach ($snippetPager as $snippet)
   {
     echo _tag('li.mb10.clickable',
-      £link($snippet)->set('.block').
+      _link($snippet)->set('.block').
       _tag('span.quiet', escape($snippet->createdBy).' - '.format_date($snippet->createdAt, 'D'))
     );
   }

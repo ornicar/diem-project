@@ -12,7 +12,7 @@ echo £o('div.snippet.list_menu');
   {
     echo £o('li.element');
 
-      echo £link($snippet)->text(escape($snippet->name));
+      echo _link($snippet)->text(escape($snippet->name));
 
     echo £c('li');
   }

@@ -8,7 +8,7 @@ echo £o('article.article.show');
 
   echo _tag('div.clearfix',
   
-    £link('@blog_rss')
+    _link('@blog_rss')
     ->text('Diem blog syndication')
     ->title('Subscribe to the blog feed')
     ->set('.rss_link').
@@ -20,7 +20,7 @@ echo £o('article.article.show');
   
   echo markdown($article->text);
   
-  echo £link($sf_context->getPage())
+  echo _link($sf_context->getPage())
   ->text('♻')
   ->set('.retweet')
   ->title($article->name)

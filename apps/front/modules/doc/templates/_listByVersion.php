@@ -14,7 +14,7 @@ echo £o('div.doc.list_by_version');
   {
     echo £o('li.element');
     
-      echo £link($doc);
+      echo _link($doc);
       
     echo £c('li');
   }

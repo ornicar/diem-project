@@ -14,7 +14,7 @@ echo £o('nav.doc_page.list_by_doc');
   {
     echo £o('li.element.mb5');
     
-      echo £link($docPage)->text(
+      echo _link($docPage)->text(
         $docPage->name.
         _tag('span.quiet.ml10', $docPage->resume)
       )->set('.no_underline');

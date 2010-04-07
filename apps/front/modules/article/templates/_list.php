@@ -17,7 +17,7 @@ echo £o('div.article.list');
       echo _tag('h2.t_medium', $article->name);
       
       echo _tag('p.article_infos',
-        £link($article)->text(__('» read more'))->set('.fright').
+        _link($article)->text(__('» read more'))->set('.fright').
         _tag('span', format_date($article->createdAt, 'D')).' by '.$article->CreatedBy
       );
       

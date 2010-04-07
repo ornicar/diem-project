@@ -14,7 +14,7 @@ echo £o('div.branch.list');
   {
     echo £o('li.element.clickable');
     
-      echo _tag('h2.t_medium', £link($branch));
+      echo _tag('h2.t_medium', _link($branch));
 
       echo $branch->resume;
       

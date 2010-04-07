@@ -44,7 +44,7 @@ foreach($pager->getResults() as $result)
   
     _tag('span.score.mr10', ceil(100*$result->getScore()).'%').
     
-    £link($result->getPage())->text(_tag('strong', escape($result->getPage()->name))).
+    _link($result->getPage())->text(_tag('strong', escape($result->getPage()->name))).
     _tag('span.ml10', dmString::truncate($result->getPageContent(), 200))
   );
 }

@@ -67,13 +67,13 @@ class fixHelperTask extends dmContextTask
       '->_tag(' => '->tag(',
       '->£o(' => '->open(',
       '->£c(' => '->close(',
-      '->£link(' => '->link(',
+      '->_link(' => '->link(',
       '->£media(' => '->media(',
       '->£table' => '->table(',
       '_tag(' => '_tag(',
       '£o(' => '_open(',
       '£c(' => '_close(',
-      '£link(' => '_link(',
+      '_link(' => '_link(',
       '£media(' => '_media(',
       '£table(' => '_table('
     );

@@ -26,7 +26,7 @@ class articleActions extends myFrontModuleActions
     {
       $item = new sfFeedItem();
       $item->setTitle($record->name);
-      $item->setLink($this->getHelper()->£link($record)->getAbsoluteHref());
+      $item->setLink($this->getHelper()->link($record)->getAbsoluteHref());
       $item->setAuthorName($record->CreatedBy->username);
       $item->setPubdate($record->getDateTimeObject('created_at')->format('U'));
       $item->setUniqueId($record->name.' ('.$record->id.')');

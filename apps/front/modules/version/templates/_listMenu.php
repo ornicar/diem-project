@@ -14,16 +14,16 @@ echo £o('div.version.list_menu');
   {
     echo £o('li.element');
     
-      echo £link($version);
+      echo _link($version);
 
       echo £o('ul');
         
         foreach($version->Docs as $doc)
-          echo _tag('li', £link($doc));
+          echo _tag('li', _link($doc));
 
-        echo _tag('li', £link($version->Whatsnew));
-        echo _tag('li', £link($version->Changelog));
-        echo _tag('li', £link('main/download')->anchor($version->anchor));
+        echo _tag('li', _link($version->Whatsnew));
+        echo _tag('li', _link($version->Changelog));
+        echo _tag('li', _link('main/download')->anchor($version->anchor));
 
       echo £c('ul');
       

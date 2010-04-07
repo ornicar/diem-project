@@ -14,14 +14,14 @@ echo £o('nav.doc.list_menu.menu');
   {
     echo £o('li.element');
     
-      echo £link($doc);
+      echo _link($doc);
 
       echo £o('ul');
       foreach($doc->Pages as $page)
       {
         echo £o('li');
         
-          echo £link($page)
+          echo _link($page)
           ->title($page->resume)
           ->text($page->name);
         

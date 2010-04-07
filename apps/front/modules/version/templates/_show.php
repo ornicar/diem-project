@@ -29,7 +29,7 @@ echo £o('div.version.show');
   if($version->svnUrl)
   {
     echo _tag('p.mb10',
-      £link('http://trac.symfony-project.org/log/plugins/diemPlugin/trunk')
+      _link('http://trac.symfony-project.org/log/plugins/diemPlugin/trunk')
       ->text(__('View the changelog on symfony trac'))
     );
   }
@@ -52,7 +52,7 @@ echo £o('div.version.show');
     echo £c('ul');
 
     echo _tag('p.mt10', 'And many more... '.
-      £link('http://github.com/diem-project/diem/commits/'.$version->githubTag)
+      _link('http://github.com/diem-project/diem/commits/'.$version->githubTag)
       ->text(__('View more commits on github'))
     );
   }

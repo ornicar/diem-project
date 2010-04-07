@@ -3,7 +3,7 @@
 
 echo _tag('div.clearfix',
 
-  £link('@plugin_rss')
+  _link('@plugin_rss')
   ->text('Diem plugins syndication')
   ->title('Subscribe to the plugins feed')
   ->set('.rss_link').

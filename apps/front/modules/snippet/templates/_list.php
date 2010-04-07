@@ -18,7 +18,7 @@ echo £o('div.snippet.list');
   foreach ($snippetPager as $snippet)
   {
     $table->body(
-      _tag('h2.t_plugin', £link($snippet)->text(escape($snippet->name))),
+      _tag('h2.t_plugin', _link($snippet)->text(escape($snippet->name))),
       format_date($snippet->createdAt, 'd'),
       escape($snippet->createdBy)
     );

@@ -19,7 +19,7 @@ echo £o('div.site.list');
 
       echo _tag('div.content.clearfix',
         ($site->Media
-          ? £link($site->url)->text(£media($site->Media)->alt($site->Media->legend ? $site->Media->legend : $site->name)->width(200))
+          ? _link($site->url)->text(£media($site->Media)->alt($site->Media->legend ? $site->Media->legend : $site->name)->width(200))
           : ''
         ).
         markdown($site->text).

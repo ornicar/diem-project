@@ -2,7 +2,7 @@
 
 echo _tag('div.clearfix',
 
-  £link('@blog_rss')
+  _link('@blog_rss')
   ->text('Diem blog syndication')
   ->title('Subscribe to the blog feed')
   ->set('.rss_link').
