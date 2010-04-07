@@ -54,37 +54,5 @@ class migrateGeshiCodeTask extends dmContextTask
     
     return $text;
   }
-  
-  protected function replace(dmDoctrineRecord $record, array $fields)
-  {
-    foreach($fields as $field)
-    {
-      $oldValue = $record->get($field);
-      
-      $newValue = strtr($oldValue, $this->getReplacements());
-      
-      if ($oldValue != $newValue)
-      {
-        $this->log('Correct '.$record.'->'.$field);
-        
-        $record->set($field, $newValue);
-        $record->save();
-      }
-    }
-  }
-  
-  protected function getReplacements()
-  {
-    return array(
-      'developper' => 'developer',
-      'usefull' => 'useful',
-      'powerfull' => 'powerful',
-      'librairy' => 'library',
-      'librairies' => 'libraries',
-      'wich ' => 'which ',
-      'developped' => 'developed',
-      'Utils' => 'Tools',
-      'flavoured' => 'flavored'
-    );
-  }
+
 }
