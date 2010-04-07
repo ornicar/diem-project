@@ -12,6 +12,8 @@ public_html/sf
 public_html/uploads/*
 public_html/stats/*
 public_html/sitemap*.xml
+public_html/dev.php
+public_html/admin_dev.php
 lib/*/doctrine/base
 lib/*/doctrine/dm*Plugin/base
 lib/migration/doctrine/*
