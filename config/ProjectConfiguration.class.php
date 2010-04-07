@@ -21,7 +21,7 @@ class ProjectConfiguration extends dmProjectConfiguration
       'dmBotPlugin'
     ));
 
-    $this->setWebDirName('public_html');
+    $this->setWebDir(realpath(dirname(__FILE__).'/..').'/public_html');
   }
   
   public function setupPlugins()
