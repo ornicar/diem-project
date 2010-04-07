@@ -5,30 +5,30 @@
 
 if ($sf_user->getFlash('form_saved'))
 {
-  echo £('p.mt20.mb20', 'Your snippet has been saved');
+  echo _tag('p.mt20.mb20', 'Your snippet has been saved');
 }
   
 echo $form->open('.snippet_form action="snippet/modifyYourSnippet?hash='.$form->getObject()->hash.'"'),
 
-£('ul',
+_tag('ul',
 
-  £('li.clearfix',
+  _tag('li.clearfix',
     $form['name']->label(__('Title'))->field()->error()
   ).
 
-  £('li.clearfix',
+  _tag('li.clearfix',
     $form['text']->label( __('Content'))->field()->error()
   ).
 
-  £('li.clearfix',
+  _tag('li.clearfix',
     $form['created_by']->label(__('Author'))->field()->error()
   ).
 
-  (isset($form['captcha']) ? £('li.clearfix',
+  (isset($form['captcha']) ? _tag('li.clearfix',
     $form['captcha']->label('Captcha', 'for=false')->field()->error()
   ) : '').
 
-  £('li.clearfix',
+  _tag('li.clearfix',
     $form->submit(__('Modify the snippet'))
   )
 

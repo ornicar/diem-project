@@ -14,12 +14,12 @@ echo £o('div.comment.list_by_plugin');
   {
     echo £o('li.element');
     
-      echo £('p.author',
-        £('strong.mr10', $pluginComment->name ? escape($pluginComment->name) : escape('<anonymous>')).
-        £('span.quiet', format_datetime($pluginComment->createdAt, 'f'))
+      echo _tag('p.author',
+        _tag('strong.mr10', $pluginComment->name ? escape($pluginComment->name) : escape('<anonymous>')).
+        _tag('span.quiet', format_datetime($pluginComment->createdAt, 'f'))
       );
       
-      echo £('p', nl2br(escape($pluginComment->text)));
+      echo _tag('p', nl2br(escape($pluginComment->text)));
       
     echo £c('li');
   }

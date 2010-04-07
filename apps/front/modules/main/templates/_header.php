@@ -1,6 +1,6 @@
 <?php
 
-echo £('nav',
+echo _tag('nav',
 
   £link('main/download').
 

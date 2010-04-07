@@ -19,7 +19,7 @@ echo £o('nav.branch.list_menu.menu');
       echo £o('ul');
       foreach($branch->Versions as $version)
       {
-        echo £('li', £link($version)->title($version->resume));
+        echo _tag('li', £link($version)->title($version->resume));
       }
       echo £c('ul');
       

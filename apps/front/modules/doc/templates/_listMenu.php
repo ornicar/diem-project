@@ -27,7 +27,7 @@ echo £o('nav.doc.list_menu.menu');
         
           if (dm_current($page))
           {
-            echo £('div.summary', $summary->render($page->moreRecentText));
+            echo _tag('div.summary', $summary->render($page->moreRecentText));
           }
           
         echo £c('li');

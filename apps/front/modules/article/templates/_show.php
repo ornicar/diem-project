@@ -6,17 +6,17 @@
 
 echo £o('article.article.show');
 
-  echo £('div.clearfix',
+  echo _tag('div.clearfix',
   
     £link('@blog_rss')
     ->text('Diem blog syndication')
     ->title('Subscribe to the blog feed')
     ->set('.rss_link').
 
-    £('h1.t_big', $article->name)
+    _tag('h1.t_big', $article->name)
   );
 
-  echo £('p.article_infos', £('span', format_date($article->createdAt, 'D')).' by '.$article->CreatedBy);
+  echo _tag('p.article_infos', _tag('span', format_date($article->createdAt, 'D')).' by '.$article->CreatedBy);
   
   echo markdown($article->text);
   

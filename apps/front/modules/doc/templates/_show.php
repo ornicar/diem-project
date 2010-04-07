@@ -6,7 +6,7 @@
 
 echo £o('div.doc.show');
 
-  echo £('h1.t_big', $doc->name);
+  echo _tag('h1.t_big', $doc->name);
   
   echo markdown($doc->text);
   

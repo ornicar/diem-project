@@ -4,19 +4,19 @@
 
 echo
 
-£('a.toggler', __('Submit an article')).
+_tag('a.toggler', __('Submit an article')).
 
 $form->open('anchor=true').
 
-£('ul',
+_tag('ul',
 
-  £('li', $form['href']->label(__('Url'))->field()).
+  _tag('li', $form['href']->label(__('Url'))->field()).
 
-  £('li', $form['title']->label()->field()).
+  _tag('li', $form['title']->label()->field()).
 
-  £('li', $form['author']->label()->field()).
+  _tag('li', $form['author']->label()->field()).
 
-  £('li', $form['language']->label()->field())
+  _tag('li', $form['language']->label()->field())
 
 ).
 

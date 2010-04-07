@@ -14,12 +14,12 @@ echo £o('div.comment.list_by_article');
   {
     echo £o('li.element');
     
-      echo £('p.author',
-        £('strong.mr10', $comment->name ? escape($comment->name) : escape('<anonymous>')).
-        £('span.quiet', format_datetime($comment->createdAt, 'f'))
+      echo _tag('p.author',
+        _tag('strong.mr10', $comment->name ? escape($comment->name) : escape('<anonymous>')).
+        _tag('span.quiet', format_datetime($comment->createdAt, 'f'))
       );
       
-      echo £('p', nl2br(escape($comment->text)));
+      echo _tag('p', nl2br(escape($comment->text)));
       
     echo £c('li');
   }

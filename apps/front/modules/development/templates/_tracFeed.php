@@ -9,11 +9,11 @@ echo £o('ul');
 
 foreach($items as $item)
 {
-  echo £('li.clickable',
+  echo _tag('li.clickable',
     £link($item->getLink())
     ->text($item->getTitle())
     ->set('.block').
-    £('span.quiet.little',
+    _tag('span.quiet.little',
       format_date($item->getPubDate(), 'd/MM H:mm').
       ' : '.
       dmString::truncate(

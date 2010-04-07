@@ -15,20 +15,20 @@ echo £o('div.site.list');
   {
     echo £o('li.element.clickable');
     
-      echo £('h2.t_medium', $site->name);
+      echo _tag('h2.t_medium', $site->name);
 
-      echo £('div.content.clearfix',
+      echo _tag('div.content.clearfix',
         ($site->Media
           ? £link($site->url)->text(£media($site->Media)->alt($site->Media->legend ? $site->Media->legend : $site->name)->width(200))
           : ''
         ).
         markdown($site->text).
-        £('p.version', 'Diem '.£('strong', $site->diemVersion))
+        _tag('p.version', 'Diem '._tag('strong', $site->diemVersion))
       );
       
     echo £c('li');
 
-    if (++$it%2) echo £('li.clearboth');
+    if (++$it%2) echo _tag('li.clearboth');
   }
 
   echo £c('ul');

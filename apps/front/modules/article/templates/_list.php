@@ -14,14 +14,14 @@ echo £o('div.article.list');
   {
     echo £o('li.element.clickable').£o('article');
     
-      echo £('h2.t_medium', $article->name);
+      echo _tag('h2.t_medium', $article->name);
       
-      echo £('p.article_infos',
+      echo _tag('p.article_infos',
         £link($article)->text(__('» read more'))->set('.fright').
-        £('span', format_date($article->createdAt, 'D')).' by '.$article->CreatedBy
+        _tag('span', format_date($article->createdAt, 'D')).' by '.$article->CreatedBy
       );
       
-      echo £('p', $article->resume);
+      echo _tag('p', $article->resume);
       
     echo £c('article').£c('li');
   }

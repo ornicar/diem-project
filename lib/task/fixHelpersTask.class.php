@@ -64,13 +64,13 @@ class fixHelperTask extends dmContextTask
   protected function getReplacements()
   {
     return array(
-      '->£(' => '->tag(',
+      '->_tag(' => '->tag(',
       '->£o(' => '->open(',
       '->£c(' => '->close(',
       '->£link(' => '->link(',
       '->£media(' => '->media(',
       '->£table' => '->table(',
-      '£(' => '_tag(',
+      '_tag(' => '_tag(',
       '£o(' => '_open(',
       '£c(' => '_close(',
       '£link(' => '_link(',

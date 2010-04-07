@@ -12,12 +12,12 @@ echo £o('div.comment.list_by_snippet');
   {
     echo £o('li.element');
     
-      echo £('p.author',
-        £('strong.mr10', $snippetComment->name ? escape($snippetComment->name) : escape('<anonymous>')).
-        £('span.quiet', format_datetime($snippetComment->createdAt, 'f'))
+      echo _tag('p.author',
+        _tag('strong.mr10', $snippetComment->name ? escape($snippetComment->name) : escape('<anonymous>')).
+        _tag('span.quiet', format_datetime($snippetComment->createdAt, 'f'))
       );
       
-      echo £('p', nl2br(escape($snippetComment->text)));
+      echo _tag('p', nl2br(escape($snippetComment->text)));
       
     echo £c('li');
   }
