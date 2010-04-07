@@ -2,15 +2,15 @@
 // Snippet : List menu
 // Vars : $snippetPager
 
-echo £o('div.snippet.list_menu');
+echo _open('div.snippet.list_menu');
 
  echo $snippetPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($snippetPager as $snippet)
   {
-    echo £o('li.element');
+    echo _open('li.element');
 
       echo _link($snippet)->text(escape($snippet->name));
 

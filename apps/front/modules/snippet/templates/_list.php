@@ -1,6 +1,6 @@
 <?php use_helper('Date');
 
-echo £o('div.snippet.list');
+echo _open('div.snippet.list');
 
   if ($sf_user->getFlash('form_saved'))
   {

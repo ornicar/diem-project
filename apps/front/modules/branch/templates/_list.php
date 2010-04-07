@@ -4,15 +4,15 @@
  * Vars : $branchPager
  */
 
-echo £o('div.branch.list');
+echo _open('div.branch.list');
 
  echo $branchPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($branchPager as $branch)
   {
-    echo £o('li.element.clickable');
+    echo _open('li.element.clickable');
     
       echo _tag('h2.t_medium', _link($branch));
 

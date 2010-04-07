@@ -4,7 +4,7 @@
  * Vars : $article
  */
 
-echo £o('article.article.show');
+echo _open('article.article.show');
 
   echo _tag('div.clearfix',
   

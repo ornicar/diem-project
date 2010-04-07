@@ -1,6 +1,6 @@
 <?php
 
-echo £o('div.dm.dm_auth');
+echo _open('div.dm.dm_auth');
 
 echo _tag('h1.site_name', dmConfig::get('site_name'));
 

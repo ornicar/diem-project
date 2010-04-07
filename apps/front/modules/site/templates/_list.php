@@ -4,16 +4,16 @@
  * Vars : $sitePager
  */
 
-echo £o('div.site.list');
+echo _open('div.site.list');
 
  echo $sitePager->renderNavigationTop();
 
-  echo £o('ul.elements.clearfix');
+  echo _open('ul.elements.clearfix');
 
   $it = 1;
   foreach ($sitePager as $site)
   {
-    echo £o('li.element.clickable');
+    echo _open('li.element.clickable');
     
       echo _tag('h2.t_medium', $site->name);
 

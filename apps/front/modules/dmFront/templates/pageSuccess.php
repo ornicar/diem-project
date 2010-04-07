@@ -1,6 +1,6 @@
 <?php
 
-echo £o('div#dm_page'.($sf_user->getIsEditMode() ? '.edit' : ''));
+echo _open('div#dm_page'.($sf_user->getIsEditMode() ? '.edit' : ''));
 
 echo $helper->renderAccessLinks();
 

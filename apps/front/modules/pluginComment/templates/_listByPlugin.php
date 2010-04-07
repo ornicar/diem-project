@@ -4,15 +4,15 @@
  * Vars : $pluginCommentPager
  */
 
-echo £o('div.comment.list_by_plugin');
+echo _open('div.comment.list_by_plugin');
 
  echo $pluginCommentPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($pluginCommentPager as $pluginComment)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
       echo _tag('p.author',
         _tag('strong.mr10', $pluginComment->name ? escape($pluginComment->name) : escape('<anonymous>')).

@@ -5,7 +5,7 @@ if(!isset($items))
   return;
 }
 
-echo £o('ul');
+echo _open('ul');
 
 foreach($items as $item)
 {

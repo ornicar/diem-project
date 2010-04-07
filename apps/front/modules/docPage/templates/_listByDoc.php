@@ -4,15 +4,15 @@
  * Vars : $docPagePager
  */
 
-echo £o('nav.doc_page.list_by_doc');
+echo _open('nav.doc_page.list_by_doc');
 
  echo $docPagePager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($docPagePager as $docPage)
   {
-    echo £o('li.element.mb5');
+    echo _open('li.element.mb5');
     
       echo _link($docPage)->text(
         $docPage->name.

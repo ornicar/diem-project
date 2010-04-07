@@ -4,15 +4,15 @@
  * Vars : $commentPager
  */
 
-echo £o('div.comment.list_by_article');
+echo _open('div.comment.list_by_article');
 
  echo $commentPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($commentPager as $comment)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
       echo _tag('p.author',
         _tag('strong.mr10', $comment->name ? escape($comment->name) : escape('<anonymous>')).

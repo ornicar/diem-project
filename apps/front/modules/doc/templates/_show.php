@@ -4,7 +4,7 @@
  * Vars : $doc
  */
 
-echo £o('div.doc.show');
+echo _open('div.doc.show');
 
   echo _tag('h1.t_big', $doc->name);
   

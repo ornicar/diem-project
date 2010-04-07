@@ -2,15 +2,15 @@
 // Snippet comment : List by snippet
 // Vars : $snippetCommentPager
 
-echo £o('div.comment.list_by_snippet');
+echo _open('div.comment.list_by_snippet');
 
  echo $snippetCommentPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($snippetCommentPager as $snippetComment)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
       echo _tag('p.author',
         _tag('strong.mr10', $snippetComment->name ? escape($snippetComment->name) : escape('<anonymous>')).

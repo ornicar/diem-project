@@ -4,7 +4,7 @@
  * Vars : $version
  */
 
-echo £o('div.version.show');
+echo _open('div.version.show');
 
   echo _tag('h1.t_big', $version->name);
   echo _tag('h2.t_baseline', $version->resume);
@@ -35,7 +35,7 @@ echo £o('div.version.show');
   }
   elseif($version->githubTag)
   {
-    echo £o('ul.commits');
+    echo _open('ul.commits');
     foreach($commits as $commit)
     {
       echo _tag('li.clickable',

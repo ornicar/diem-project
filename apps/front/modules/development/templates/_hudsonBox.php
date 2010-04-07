@@ -2,11 +2,11 @@
 
 use_stylesheet('hudson');
 
-echo £o('div.hudson_padding');
+echo _open('div.hudson_padding');
 
 echo _tag('h2.t_box', __('Continuous integration'));
 
-echo £o('div.latest_builds');
+echo _open('div.latest_builds');
 echo _tag('p', 'Latest builds:');
 for($it=0; $it<5; $it++)
 {

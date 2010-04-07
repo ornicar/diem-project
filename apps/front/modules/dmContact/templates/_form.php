@@ -10,7 +10,7 @@ if($sf_user->hasFlash('contact_form_valid'))
 // open the form tag with a dm_contact_form css class
 echo $form->open();
 
-echo £o('ul');
+echo _open('ul');
 
 // write name label, field and error message
 echo _tag('li.clearfix', $form['name']->label()->field()->error());

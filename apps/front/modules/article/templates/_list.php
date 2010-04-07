@@ -4,15 +4,15 @@
  * Vars : $articlePager
  */
 
-echo £o('div.article.list');
+echo _open('div.article.list');
 
  echo $articlePager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($articlePager as $article)
   {
-    echo £o('li.element.clickable').£o('article');
+    echo _open('li.element.clickable')._open('article');
     
       echo _tag('h2.t_medium', $article->name);
       

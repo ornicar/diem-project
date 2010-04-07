@@ -36,7 +36,7 @@ if (!$pager)
 
 echo $pager->renderNavigationTop();
 
-echo £o('ol.search_results.clearfix start='.$pager->getFirstIndice());
+echo _open('ol.search_results.clearfix start='.$pager->getFirstIndice());
 
 foreach($pager->getResults() as $result)
 {

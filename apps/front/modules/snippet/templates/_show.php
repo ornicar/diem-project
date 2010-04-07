@@ -2,7 +2,7 @@
 // Snippet : Show
 // Vars : $snippet
 
-echo £o('div.snippet.show');
+echo _open('div.snippet.show');
 
   echo _tag('div.clearfix',
   

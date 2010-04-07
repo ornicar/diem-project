@@ -4,19 +4,19 @@
  * Vars : $versionPager
  */
 
-echo £o('div.version.list_menu');
+echo _open('div.version.list_menu');
 
  echo $versionPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($versionPager as $version)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
       echo _link($version);
 
-      echo £o('ul');
+      echo _open('ul');
         
         foreach($version->Docs as $doc)
           echo _tag('li', _link($doc));

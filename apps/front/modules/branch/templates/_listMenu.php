@@ -4,19 +4,19 @@
  * Vars : $branchPager
  */
 
-echo £o('nav.branch.list_menu.menu');
+echo _open('nav.branch.list_menu.menu');
 
  echo $branchPager->renderNavigationTop();
 
-  echo £o('ul.elements');
+  echo _open('ul.elements');
 
   foreach ($branchPager as $branch)
   {
-    echo £o('li.element');
+    echo _open('li.element');
     
       echo _tag('a.link', $branch);
       
-      echo £o('ul');
+      echo _open('ul');
       foreach($branch->Versions as $version)
       {
         echo _tag('li', _link($version)->title($version->resume));
