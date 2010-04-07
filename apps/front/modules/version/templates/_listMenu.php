@@ -25,13 +25,13 @@ echo _open('div.version.list_menu');
         echo _tag('li', _link($version->Changelog));
         echo _tag('li', _link('main/download')->anchor($version->anchor));
 
-      echo £c('ul');
+      echo _close('ul');
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $versionPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

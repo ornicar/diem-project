@@ -49,6 +49,6 @@ foreach($pager->getResults() as $result)
   );
 }
 
-echo £c('ol');
+echo _close('ol');
 
 echo $pager->renderNavigationBottom();

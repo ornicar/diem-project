@@ -24,4 +24,4 @@ foreach($items as $item)
   );
 }
 
-echo £c('ul');
+echo _close('ul');

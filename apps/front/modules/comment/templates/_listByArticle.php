@@ -21,11 +21,11 @@ echo _open('div.comment.list_by_article');
       
       echo _tag('p', nl2br(escape($comment->text)));
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $commentPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

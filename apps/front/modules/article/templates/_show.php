@@ -26,4 +26,4 @@ echo _open('article.article.show');
   ->title($article->name)
   ->currentSpan(false);
   
-echo £c('article');
+echo _close('article');

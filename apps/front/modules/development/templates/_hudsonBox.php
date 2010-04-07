@@ -16,7 +16,7 @@ for($it=0; $it<5; $it++)
   ->text($item->getTitle())
   ->set(strpos($item->getTitle(), 'SUCCESS') ? '.success' : '.failure');
 }
-echo £c('div').£c('div');
+echo _close('div')._close('div');
 
 echo _tag('span.block.text_align_center', 'Tests');
 echo _link('http://ci.diem-project.org/job/diem_5.0/test/?width=800&height=600&failureOnly=false')

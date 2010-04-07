@@ -22,4 +22,4 @@ echo $helper->renderAccessLinks();
 
   );
 
-echo £c('div');
+echo _close('div');

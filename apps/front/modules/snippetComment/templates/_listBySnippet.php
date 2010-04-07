@@ -19,11 +19,11 @@ echo _open('div.comment.list_by_snippet');
       
       echo _tag('p', nl2br(escape($snippetComment->text)));
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $snippetCommentPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

@@ -18,11 +18,11 @@ echo _open('div.branch.list');
 
       echo $branch->resume;
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $branchPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

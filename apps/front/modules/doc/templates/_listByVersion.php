@@ -16,11 +16,11 @@ echo _open('div.doc.list_by_version');
     
       echo _link($doc);
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $docPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

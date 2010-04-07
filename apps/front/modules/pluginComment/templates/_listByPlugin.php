@@ -21,11 +21,11 @@ echo _open('div.comment.list_by_plugin');
       
       echo _tag('p', nl2br(escape($pluginComment->text)));
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $pluginCommentPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

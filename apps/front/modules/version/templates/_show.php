@@ -49,7 +49,7 @@ echo _open('div.version.show');
         )
       );
     }
-    echo £c('ul');
+    echo _close('ul');
 
     echo _tag('p.mt10', 'And many more... '.
       _link('http://github.com/diem-project/diem/commits/'.$version->githubTag)
@@ -69,4 +69,4 @@ echo _open('div.version.show');
     echo $markdown;
   }
   
-echo £c('div');
+echo _close('div');

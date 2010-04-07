@@ -19,11 +19,11 @@ echo _open('nav.doc_page.list_by_doc');
         _tag('span.quiet.ml10', $docPage->resume)
       )->set('.no_underline');
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $docPagePager->renderNavigationBottom();
 
-echo £c('nav');
+echo _close('nav');

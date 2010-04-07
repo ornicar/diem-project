@@ -16,11 +16,11 @@ echo _open('nav.article.list_menu');
     
       echo _link($article)->title($article->resume);
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $articlePager->renderNavigationBottom();
 
-echo £c('nav');
+echo _close('nav');

@@ -28,4 +28,4 @@ echo _open('div.snippet.list');
 
  echo $snippetPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

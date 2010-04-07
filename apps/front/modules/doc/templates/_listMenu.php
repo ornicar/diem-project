@@ -30,15 +30,15 @@ echo _open('nav.doc.list_menu.menu');
             echo _tag('div.summary', $summary->render($page->moreRecentText));
           }
           
-        echo £c('li');
+        echo _close('li');
       }
-      echo £c('ul');
+      echo _close('ul');
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $docPager->renderNavigationBottom();
 
-echo £c('nav');
+echo _close('nav');

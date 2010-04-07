@@ -23,11 +23,11 @@ echo _open('div.article.list');
       
       echo _tag('p', $article->resume);
       
-    echo £c('article').£c('li');
+    echo _close('article')._close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $articlePager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

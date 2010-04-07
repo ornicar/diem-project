@@ -26,13 +26,13 @@ echo _open('div.site.list');
         _tag('p.version', 'Diem '._tag('strong', $site->diemVersion))
       );
       
-    echo £c('li');
+    echo _close('li');
 
     if (++$it%2) echo _tag('li.clearboth');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $sitePager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

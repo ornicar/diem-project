@@ -21,13 +21,13 @@ echo _open('nav.branch.list_menu.menu');
       {
         echo _tag('li', _link($version)->title($version->resume));
       }
-      echo £c('ul');
+      echo _close('ul');
       
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $branchPager->renderNavigationBottom();
 
-echo £c('nav');
+echo _close('nav');

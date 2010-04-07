@@ -14,11 +14,11 @@ echo _open('div.snippet.list_menu');
 
       echo _link($snippet)->text(escape($snippet->name));
 
-    echo £c('li');
+    echo _close('li');
   }
 
-  echo £c('ul');
+  echo _close('ul');
 
  echo $snippetPager->renderNavigationBottom();
 
-echo £c('div');
+echo _close('div');

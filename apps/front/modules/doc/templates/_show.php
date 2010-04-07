@@ -10,4 +10,4 @@ echo _open('div.doc.show');
   
   echo markdown($doc->text);
   
-echo £c('div');
+echo _close('div');

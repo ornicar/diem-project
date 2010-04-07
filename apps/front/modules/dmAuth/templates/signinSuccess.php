@@ -8,4 +8,4 @@ echo _tag('div.message.mt20',
   'The Diem Project website opens its doors on November 23, 2009'
 );
 
-echo £c('div');
+echo _close('div');

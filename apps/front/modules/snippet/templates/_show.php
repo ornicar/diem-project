@@ -18,4 +18,4 @@ echo _open('div.snippet.show');
   
   echo _tag('div.markdown', $snippetHtml);
   
-echo £c('div');
+echo _close('div');
