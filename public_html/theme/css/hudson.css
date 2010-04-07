@@ -1,0 +1,44 @@
+.hudson_box {
+  border: 1px solid #D6D6D6;
+}
+
+.hudson_padding {
+  padding: 1em;
+}
+
+.hudson_box .t_box {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #444;
+  margin: 0;
+}
+
+.hudson_box p {
+  margin-top: 1em;
+}
+
+.hudson_box .link {
+  display: block;
+}
+
+.hudson_box img {
+vertical-align:middle;
+}
+
+.hudson_box .latest_builds .link {
+  padding-left: 20px;
+  height: 19px;
+}
+.hudson_box .latest_builds .link.success {
+  background-image: url(../images/status.png);
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+.hudson_box .latest_builds .link.failure {
+  background-image: url(../images/status-away.png);
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+.hudson_box .latest_builds .link span {
+
+}

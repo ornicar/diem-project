@@ -1,0 +1,56 @@
+div.community_article_form li {
+  margin: 0.5em 0;
+}
+
+div.community_article_form label {
+  float: left;
+  width: 25%;
+  font-size: 0.9em;
+  color: #666;
+}
+
+div.community_article_form input {
+  width: 70%;
+  font-size: 0.9em;
+}
+
+div.community_article_form input.has_error {
+  border: 1px solid red;
+}
+
+div.community_article_form {
+  border: 1px solid #D6D6D6;
+  padding: 5px;
+}
+
+div.community_article_form a.toggler {
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+div.twitter_search {
+  font-size: 0.9em;
+}
+
+div.twitter_search li {
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid ddd;
+  margin-bottom: 0.6em;
+}
+
+div.twitter_search .tweet_from_user {
+  color: #666;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+div.twitter_search .tweet_text {
+  display: inline;
+  color: #444;
+}
+
+div.twitter_search .tweet_text a {
+  text-decoration: none;
+}

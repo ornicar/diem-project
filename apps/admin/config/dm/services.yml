@@ -1,0 +1,18 @@
+parameters:
+
+  cache_cleaner.options:
+    safe_models:              [ Comment, DmSentMail, DmError, DmRedirect, DmUser, DmPermission, DmGroup, DmGroupPermission, DmUserPermission, DmUserGroup, DmRememberKey, DmMailTemplate ]
+    
+  markdown.class:             myGeshiMarkdown
+
+  log_view.options:
+    show_ip:                  true
+
+  code_editor.class:          dmAdminCodeEditor
+  
+services:
+
+  markdown:
+    class:                    %markdown.class%
+    shared:                   true
+    arguments:                [ @helper, @cache_manager, %markdown.options% ]

@@ -1,0 +1,66 @@
+body.page_main_root #dm_content {
+  width: 1000px;
+  float: none;
+  background: url(../images/home-top-bg.png) top left no-repeat;
+}
+
+body.page_main_root .dm_layout_top {
+  margin-bottom: 0;
+}
+
+body.page_main_root div.metal,
+body.page_main_root .t_big {
+  color: #fff;
+  letter-spacing: 0px;
+}
+
+body.page_main_root .t_big {
+  margin-top: 20px;
+}
+
+body.page_main_root div.metal .markdown {
+  font-size: 1.2em;
+}
+
+body.page_main_root div.metal h2 {
+  font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-Serif;
+  font-size: 1.9em;
+  color: #eee;
+  margin: 0 0 5px 0;
+  border: none;
+}
+
+body.page_main_root div.home_links {
+  text-align: center;
+}
+
+body.page_main_root div.home_links .button {
+  margin: 0 0.5em;
+}
+
+body.page_main_root div.home_links .download span {
+  background: url(../images/arrow-stop-270.png) top left no-repeat;
+  padding-left: 18px;
+}
+
+body.page_main_root div.home_links .demo span {
+  background: url(../images/globe-green.png) top left no-repeat;
+  padding-left: 18px;
+}
+
+body.page_main_root div.home_links .features span {
+  background: url(../images/direction.png) top left no-repeat;
+  padding-left: 18px;
+}
+
+.home_screen {
+  border: 1px solid #aaa;
+}
+
+body.page_main_root ol.dm_widget_content_gallery {
+  height: 286px;
+  overflow: hidden;
+  -moz-box-shadow: 0 0 6px #fff;
+  -webkit-box-shadow: 0 1px 3px #fff;
+  box-shadow: 0 1px 3px #fff;
+}

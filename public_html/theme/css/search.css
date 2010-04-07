@@ -1,0 +1,17 @@
+form.big_search_form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input.big_search_field {
+  width: 30%;
+}
+
+li.search_result {
+  padding: 10px;
+}
+
+li.search_result .score {
+  font-weight: bold;
+  color: #888;
+}

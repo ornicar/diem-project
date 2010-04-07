@@ -1,0 +1,44 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: PluginComment
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: plugin_comment
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields:
+        is_active:
+          label: Active
+      list:
+        display:
+          - '=name'
+          - plugin_id
+          - text
+          - is_active
+          - created_at
+          - updated_at
+        sort:
+          - created_at
+          - desc
+        table_method: getAdminListQuery
+        table_count_method: ~
+      filter:
+        display:
+          - name
+          - is_active
+          - plugin_id
+          - text
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [name, is_active, plugin_id]
+          Text: [text]
+        class: PluginCommentAdminForm
+        fields: {  }
+      edit: ~
+      new: ~
+    sortable: false

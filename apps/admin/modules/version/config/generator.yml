@@ -1,0 +1,58 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Version
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: version
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields:
+        is_active:
+          label: Active
+        is_best:
+          label: Best
+        resume:
+          is_big: true
+      list:
+        display:
+          - '=name'
+          - branch_id
+          - stability
+          - resume
+          - is_active
+          - is_best
+          - downloads
+          - _created_at
+          - _updated_at
+        sort:
+          - position
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+      filter:
+        display:
+          - name
+          - is_active
+          - is_best
+          - number
+          - package
+          - svn_url
+          - text
+          - stability
+          - downloads
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [name, is_active, branch_id, is_best]
+          Text: [resume, text]
+          Package: [package_form, package_view]
+          Others: [github_tag, number, stability]
+        class: VersionAdminForm
+        fields: {  }
+      edit: ~
+      new: ~
+    sortable: true

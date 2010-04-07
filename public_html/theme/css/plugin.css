@@ -1,0 +1,92 @@
+.plugin.list .t_medium {
+  margin-bottom: 0.5em;
+}
+
+.plugin table {
+  color: #444;
+}
+
+.plugin .t_plugin {
+  font-size: 1.2em;
+}
+
+.plugin td img {
+  vertical-align: middle;
+}
+
+div.plugin a.rss_link {
+  float: right;
+  background: url(../images/rss.png);
+  width: 48px;
+  height: 48px;
+  display: block;
+  font-size: 0;
+  color: #fff;
+  display: block;
+  margin-top: 5px;
+}
+
+div.plugin ul.links li {
+  float: left;
+  margin-right: 1em;
+}
+
+div.plugin form li.dm_form_element {
+  margin: 2em 0;
+}
+
+div.plugin form label {
+  float: left;
+  width: 10em;
+  text-align: right;
+  margin-right: 1em;
+}
+
+div.plugin form input {
+  width: 300px;
+}
+
+div.plugin form .full_width {
+  width: 550px;
+}
+
+div.plugin form input.submit {
+  margin-left: 11em;
+  width: auto;
+}
+
+div.plugin form .dm_help_wrap {
+  margin-left: 11em;
+  color: #888;
+}
+
+div.plugin form .error_list {
+  margin-left: 11em;
+}
+
+#plugin_form_readme {
+  font-family: monospace;
+}
+
+div.plugin_show div.ui-tabs {
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+div.plugin_show div.issues_list {
+  float: left;
+  width: 49%;
+}
+
+div.plugin_show div.issues_open {
+  margin-right: 1%;
+}
+
+div.plugin_show div.issues_closed {
+  margin-left: 1%;
+}
+
+div.plugin_show div.issues_list .t_medium {
+  margin-top: 0;
+}

@@ -1,0 +1,15 @@
+parameters:
+
+  layout_helper.class:          myLayoutHelper
+
+  cache_cleaner.options:
+    safe_models:              [ Comment, DmSentMail, DmError, DmRedirect, DmUser, DmPermission, DmGroup, DmGroupPermission, DmUserPermission, DmUserGroup, DmRememberKey, DmMailTemplate ]
+    
+  markdown.class:             myGeshiMarkdown
+  
+services:
+
+  markdown:
+    class:                    %markdown.class%
+    shared:                   true
+    arguments:                [ @helper, @cache_manager, %markdown.options% ]

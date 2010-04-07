@@ -1,0 +1,253 @@
+DmUser:
+  relations:
+    Plugins:
+      class:          Plugin
+      local:          id
+      foreign:        created_by
+      owningSide:     false
+      type:           many
+
+Snippet:
+  actAs:
+    Timestampable:
+    Sortable:
+    DmVersionable:
+  columns:
+    name:             { type: string(255), notnull: true }
+    text:             { type: clob, extra: markdown }
+    is_active:        { type: boolean, notnull: true, default: false }
+    created_by:       { type: string(255), notnull: true }
+    hash:             { type: string(255), notnull: true }
+
+SnippetComment:
+  actAs:              [ Timestampable ]
+  columns:
+    snippet_id:       { type: integer, notnull: true }
+    name:             { type: string(255) }
+    text:             { type: clob }
+    is_active:        { type: boolean, notnull: true, default: true }
+  relations:
+    Snippet:
+      foreignAlias:   Comments
+      onDelete:       CASCADE
+
+Plugin:
+  actAs:
+    Timestampable:
+    DmSortable:       { new: first }
+    DmTaggable:
+      className:      "%CLASS%DmTagRelClass" # special case: the class PluginDmTag already exists
+      tableName:      plugin_dm_tag
+    DmBlameable:
+    DmVersionable:
+  columns:
+    name:             { type: string(255), notnull: true }
+    resume:           { type: string(255) }
+    text:             { type: clob, extra: markdown }
+    readme:           { type: clob, extra: markdown }
+    is_active:        { type: boolean, notnull: true, default: true }
+    is_done:          { type: boolean, notnull: true, default: false }
+    requires_migration: { type: boolean, notnull: true, default: false }
+    bundled_in_core:  { type: boolean, notnull: true, default: false }
+    symfony_url:      { type: string(255), extra: link }
+    svn_url:          { type: string(255), extra: link }
+    package_url:      { type: string(255), extra: link }
+    github_url:       { type: string(255), extra: link }
+    package:          { type: integer }
+  relations:
+    Package:
+      class:          DmMedia
+      onDelete:       SET NULL
+      local:          package
+    Branches:
+      class:          Branch
+      refClass:       PluginBranch
+
+PluginComment:
+  actAs:              [ Timestampable ]
+  columns:
+    plugin_id:        { type: integer, notnull: true }
+    name:             { type: string(255) }
+    text:             { type: clob }
+    is_active:        { type: boolean, notnull: true, default: true }
+  relations:
+    Plugin:
+      foreignAlias:   Comments
+      onDelete:       CASCADE
+
+PluginBranch:
+  columns:
+    plugin_id:        { type: integer, primary: true }
+    branch_id:        { type: integer, primary: true }
+  relations:
+    Plugin:
+      onDelete:       CASCADE
+    Branch:
+      onDelete:       CASCADE
+
+Version:
+  actAs:
+    Timestampable:
+    DmSortable:       { new: first }
+    DmBlameable:
+    DmVersionable:
+  columns:
+    branch_id:        { type: integer, notnull: true }
+    name:             { type: string(255), notnull: true }
+    number:           { type: string(255), notnull: true, unique: true }
+    package:          { type: integer }
+    svn_url:          { type: string(255) }
+    github_tag:       { type: string(255) }
+    text:             { type: clob, extra: markdown }
+    resume:           { type: string(255) }
+    changelog:        { type: clob, extra: markdown }
+    is_active:        { type: boolean, notnull: true, default: true }
+    is_best:          { type: boolean, notnull: true, default: false }
+    stability:        { type: string(255) }
+    downloads:        { type: integer }
+  relations:
+    Package:
+      class:          DmMedia
+      onDelete:       SET NULL
+      local:          package
+    Branch:
+      onDelete:      CASCADE
+      foreignAlias:  Versions
+      orderBy:       position ASC
+
+Branch:
+  actAs:
+    Timestampable:
+    DmSortable:       { new: first }
+    DmBlameable:
+    DmVersionable:
+  columns:
+    name:             { type: string(255), notnull: true }
+    number:           { type: string(255), notnull: true, unique: true }
+    resume:           { type: string(255) }
+    whatsnew:         { type: clob, extra: markdown }
+  relations:
+    Plugins:
+      class:          Plugin
+      refClass:       PluginBranch
+
+Doc:
+  actAs:
+    Timestampable:
+    DmSortable:       { new: last }
+    I18n:
+      fields:         [ name, resume, text, is_active ]
+      actAs:
+        DmBlameable:
+        DmVersionable:
+  columns:
+    branch_id:        { type: integer, notnull: true }
+    name:             { type: string(255), notnull: true }
+    type:             { type: string(255), notnull: true }
+    resume:           { type: string(255) }
+    text:             { type: clob, extra: markdown }
+    is_active:        { type: boolean, notnull: true, default: true }
+  relations:
+    Branch:
+      foreignAlias:   Docs
+      onDelete:       CASCADE
+
+DocPage:
+  actAs:
+    Timestampable:
+    DmSortable:       { manyListsColumn: doc_id }
+    DmTaggable:
+    I18n:
+      fields:         [ name, resume, text, is_active, is_done ]
+      actAs:
+        DmBlameable:
+        DmVersionable:
+          fields:     ~
+  columns:
+    doc_id:           { type: integer, notnull: true }
+    name:             { type: string(255), notnull: true }
+    resume:           { type: string(255) }
+    text:             { type: clob, extra: markdown }
+    is_active:        { type: boolean, notnull: true, default: true }
+    is_done:          { type: boolean, notnull: true, default: false }
+  relations:
+    Doc:
+      foreignAlias:   Pages
+      onDelete:       CASCADE
+
+Site:
+  actAs:
+    Timestampable:
+    DmSortable:       { new: last }
+    DmBlameable:
+  columns:
+    name:             { type: string(255), notnull: true }
+    text:             { type: clob, extra: markdown }
+    url:              { type: string(255) }
+    screen:           { type: integer }
+    diem_version:     { type: string(255) }
+    is_fr:            { type: boolean, notnull: true, default: false }
+    is_active:        { type: boolean, notnull: true, default: true }
+  relations:
+    Media:
+      class:          DmMedia
+      local:          screen
+      onDelete:       SET NULL
+
+Article:
+  actAs:
+    Timestampable:
+    DmSortable:       { new: first }
+    DmTaggable:
+    DmBlameable:
+    DmVersionable:
+  columns:
+    name:             { type: string(255), notnull: true }
+    text:             { type: clob, extra: markdown }
+    resume:           { type: string(255) }
+    is_active:        { type: boolean, notnull: true, default: true }
+
+Comment:
+  actAs:              [ Timestampable ]
+  columns:
+    article_id:       { type: integer, notnull: true }
+    name:             { type: string(255) }
+    text:             { type: clob }
+    is_active:        { type: boolean, notnull: true, default: true }
+  relations:
+    Article:
+      foreignAlias:   Comments
+      onDelete:       CASCADE
+
+CommunityArticle:
+  actAs:
+    Timestampable:
+    DmSortable:
+    DmBlameable:
+    DmVersionable:
+  columns:
+    title:            { type: string(255), notnull: true }
+    author:           { type: string(255), notnull: true }
+    href:             { type: string(255), extra: link, notnull: true }
+    is_active:        { type: boolean, notnull: true, default: false }
+    language:         { type: string(255), default: "en" }
+
+AnonymousReport:
+  actAs:
+    Timestampable:
+  columns:
+    hash:             { type: string(32), notnull: true, unique: true }
+    diem_version:     { type: string(255), notnull: true }
+
+AnonymousReportPlugin:
+  columns:
+    anonymous_report_id: { type: integer, notnull: true, primary: true }
+    plugin_id:        { type: integer, notnull: true, primary: true }
+  relations:
+    Plugin:
+      local:          plugin_id
+      onDelete:       CASCADE
+      foreignAlias:   Usages
+    AnonymousReport:
+      local:          anonymous_report_id
+      onDelete:       CASCADE

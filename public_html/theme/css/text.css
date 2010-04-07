@@ -1,0 +1,30 @@
+.text .text_image {
+}
+
+.text .image_right .text_image {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.text .image_right .text_image img {
+  border: 1px solid #ccc;
+}
+
+.text .image_left .text_image {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.text .text_title {
+  font-size: 1.7em;
+  color: #868d00;
+  border-bottom: 1px solid #868d00;
+  margin: 1em 0;
+}
+
+.text .text_title .link {
+  color: #868d00;
+  text-decoration: none;
+}

@@ -1,0 +1,75 @@
+div.dm_user_my_account .box_list li {
+  text-decoration: none;
+  margin-top: 0;
+}
+div.dm_user_my_account .box_inner a.link {
+  text-decoration: none;
+}
+
+div.dm_user_my_account a.user_signout {
+  color: #fff;
+}
+
+div.dm_user_my_account form li.dm_form_element {
+  margin-bottom: 0.5em;
+}
+
+div.dm_user_my_account form label {
+  float: left;
+  width: 30%;
+  text-align: right;
+  margin-right: 3%;
+  line-height: 1.6em;
+}
+
+div.dm_user_my_account form input {
+  width: 64%;
+}
+
+div.dm_user_my_account form input.submit {
+  width: auto;
+  float: right;
+}
+
+form.dm_register_form li.dm_form_element {
+  margin: 1em 0;
+}
+
+form.dm_register_form label {
+  float: left;
+  width: 10em;
+  text-align: right;
+  margin-right: 1em;
+}
+
+form.dm_register_form input.submit {
+  margin-left: 11em;
+}
+
+form.dm_register_form .dm_help_wrap {
+  margin-left: 11em;
+  color: #888;
+}
+
+form.dm_register_form .error_list {
+  margin-left: 11em;
+}
+
+form.dm_signin_form li.dm_form_element {
+  margin: 0.5em 0;
+}
+
+form.dm_signin_form label {
+  float: left;
+  width: 6em;
+  text-align: right;
+  margin-right: 1em;
+}
+
+form.dm_signin_form input.submit {
+  margin-left: 7em;
+}
+
+form.dm_register_form #recaptcha_area {
+  margin: auto;
+}

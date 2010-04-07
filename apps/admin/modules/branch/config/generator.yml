@@ -1,0 +1,42 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Branch
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: branch
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=name'
+          - docs_list
+          - versions_list
+          - number
+          - resume
+          - _created_at
+          - _updated_at
+        sort:
+          - position
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+      filter:
+        display:
+          - name
+          - number
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [name, number, resume]
+          "What's new": [whatsnew]
+          "Docs & Versions": [docs_list, versions_list]
+        class: BranchAdminForm
+        fields: {  }
+      edit: ~
+      new: ~
+    sortable: true

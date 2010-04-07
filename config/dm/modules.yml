@@ -1,0 +1,174 @@
+Content:
+
+  Global:
+  
+    main:
+      components:
+        header:
+          cache:              true
+        footer:
+          cache:              static
+        homeLinks:
+          cache:              true
+        sitemap:
+          cache:              true
+        test:
+    
+    tour:
+      components:
+        menu:
+          cache:              true
+
+    development:
+      components:
+        hudsonBox:
+          cache:              false
+  
+  Documentation:
+          
+    doc:
+      parent:                 branch
+      page:                   true
+      name:                   Documentation
+      components:
+        show:
+          cache:              true
+        listMenu:
+          filters:            [ branch ]
+          cache:              true
+          
+    docPage:
+      parent:                 doc
+      page:                   true
+      name:                   Documentation page
+      components:
+        listByDoc:
+          filters:            [ doc ]
+          cache:              true
+        show:
+          cache:              true
+  
+  Version:
+          
+    branch:
+      page:                   true
+      name:                   "Branch|Branches"
+      components:
+        list:
+          cache:              true
+        listMenu:
+          cache:              true
+        show:
+          cache:              true
+        listChoice:
+          cache:              true
+  
+    version:
+      parent:                 branch
+      page:                   true
+      components:
+        show:
+          cache:              true
+        listDownload:
+          cache:              true
+          
+  Site:
+  
+    site:
+      name:                   "Site using Diem|Sites using Diem"
+      components:
+        list:
+          cache:              true
+          
+  Blog:
+  
+    article:
+      page:                   true
+      components:
+        list:
+          cache:              true
+        listMenu:
+          cache:              true
+        show:
+          cache:              true
+        title:
+          cache:              true
+          
+    comment:
+      components:
+        listByArticle:
+          filters:            [ article ]
+        form:
+          
+  Plugin:
+  
+    plugin:
+      page:                   true
+      components:
+        list:
+          cache:              true
+        listMenu:
+          cache:              true
+        show:
+          cache:              true
+        title:
+          cache:              true
+        formCreate:
+        formEdit:
+          
+    pluginComment:
+      parent:                 plugin
+      components:
+        listByPlugin:
+          filters:            [ plugin ]
+        form:
+          
+  Snippet:
+  
+    snippet:
+      page:                   true
+      components:
+        list:
+          cache:              true
+        listLittle:
+          cache:              true
+        listMenu:
+          cache:              true
+        show:
+          cache:              true
+        form:
+        formEdit:
+        editUrl:
+        previz:
+        title:
+          cache:              true
+          
+    snippetComment:
+      parent:                 snippet
+      components:
+        listBySnippet:
+          filters:            [ snippet ]
+        form:
+
+  Community:
+
+    communityArticle:
+      components:
+        list:
+          cache:              true
+        form:
+
+  Tag:
+
+    dmTag:
+      page:             false
+
+System:
+
+  Security:
+
+    dmUser:
+
+      components:
+        myAccount:
+          cache:              false

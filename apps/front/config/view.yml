@@ -1,0 +1,32 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+
+  stylesheets:
+    - lib.reset
+    - geshi
+    - layout
+    - main
+    - navigation
+    - markdown
+    - typography
+    - button
+    - comment
+    - download
+    - blog
+    - search
+    - home
+    - text
+    - plugin
+    - snippet
+    - community
+    - contact
+    - user
+
+  javascripts:
+    - front
+
+  has_layout:     true
+  layout:         layout

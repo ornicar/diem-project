@@ -1,0 +1,49 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Snippet
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: snippet
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields:
+        is_active:
+          label: Active
+      list:
+        display:
+          - '=name'
+          - comments_list
+          - text
+          - is_active
+          - created_by
+          - hash
+          - created_at
+          - updated_at
+        sort:
+          - position
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+      filter:
+        display:
+          - name
+          - is_active
+          - text
+          - created_by
+          - hash
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [name, is_active]
+          Text: [text]
+          Others: [created_by, hash]
+          Comments: [comments_list]
+        class: SnippetAdminForm
+        fields: {  }
+      edit: ~
+      new: ~
+    sortable: true

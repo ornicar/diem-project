@@ -1,0 +1,14 @@
+rssSuccess:
+  http_metas:
+    content-type: text/xml
+
+  metas:
+    title:        Diem Project Snippets
+    language:     en
+    robots:       index, follow
+
+  stylesheets:    [-*]
+
+  javascripts:    [-*]
+
+  has_layout:     false

@@ -1,0 +1,67 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Plugin
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: plugin
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields:
+        branches_list:
+          label: Branches
+        is_active:
+          label: Active
+        is_done:
+          label: Done
+        resume:
+          is_big: true
+      list:
+        display:
+          - '=name'
+          - created_by
+          - resume
+          - _tags
+          - is_active
+          - is_done
+          - _created_at
+          - _updated_at
+        sort:
+          - position
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+      filter:
+        display:
+          - name
+          - is_active
+          - is_done
+          - resume
+          - text
+          - readme
+          - symfony_url
+          - svn_url
+          - package_url
+          - package
+          - created_by
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [name, is_active, created_by, is_done]
+          Text: [resume, text]
+          Readme: [readme]
+          Branches: [branches_list]
+          Gihub: [github_url]
+          Others: [requires_migration, bundled_in_core]
+          "Tags & Comments": [tags, comments_list]
+        class: PluginAdminForm
+        fields:
+          symfony_url: { is_link: true, help: 'Drag & drop a page here from the PAGES panel, or write an url' }
+          svn_url: { is_link: true, help: 'Drag & drop a page here from the PAGES panel, or write an url' }
+          package_url: { is_link: true, help: 'Drag & drop a page here from the PAGES panel, or write an url' }
+      edit: ~
+      new: ~
+    sortable: true

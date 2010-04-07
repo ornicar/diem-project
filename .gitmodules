@@ -1,0 +1,24 @@
+[submodule "plugins/dmBotPlugin"]
+	path = plugins/dmBotPlugin
+	url = git://github.com/ornicar/dmBotPlugin.git
+[submodule "plugins/dmContactPlugin"]
+	path = plugins/dmContactPlugin
+	url = git://github.com/ornicar/dmContactPlugin.git
+[submodule "plugins/dmGithubPlugin"]
+	path = plugins/dmGithubPlugin
+	url = git://github.com/ornicar/dmGithubPlugin.git
+[submodule "plugins/dmSqlBackupPlugin"]
+	path = plugins/dmSqlBackupPlugin
+	url = git://github.com/ornicar/dmSqlBackupPlugin.git
+[submodule "plugins/dmTagPlugin"]
+	path = plugins/dmTagPlugin
+	url = git://github.com/diem-project/dmTagPlugin.git
+[submodule "plugins/dmWidgetFeedReaderPlugin"]
+	path = plugins/dmWidgetFeedReaderPlugin
+	url = git://github.com/ornicar/dmWidgetFeedReaderPlugin.git
+[submodule "plugins/dmWidgetGalleryPlugin"]
+	path = plugins/dmWidgetGalleryPlugin
+	url = git://github.com/ornicar/dmWidgetGalleryPlugin.git
+[submodule "plugins/dmWidgetTwitterPlugin"]
+	path = plugins/dmWidgetTwitterPlugin
+	url = git://github.com/ornicar/dmWidgetTwitterPlugin.git

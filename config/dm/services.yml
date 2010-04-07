@@ -1,0 +1,9 @@
+parameters:
+
+  cache_cleaner.options:
+    safe_models:              [ Comment, DmSentMail, DmError, DmRedirect, DmUser, DmPermission, DmGroup, DmGroupPermission, DmUserPermission, DmUserGroup, DmRememberKey, DmMailTemplate ]
+    
+  markdown.class:             myGeshiMarkdown
+  
+  page_helper.options:
+    widget_css_class_pattern: '%%module%%_%%action%% %%module%% %%action%%'

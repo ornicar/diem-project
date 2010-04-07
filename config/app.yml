@@ -1,0 +1,4 @@
+all:
+
+  branches:
+    current:      "5.0"

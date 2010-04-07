@@ -1,0 +1,3 @@
+<?php
+
+echo $plugin->getTagsString();

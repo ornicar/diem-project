@@ -1,0 +1,27 @@
+all:
+
+  i18n:
+    cultures:             [ en ]        # Available cultures
+      
+  cache:
+    apc:                  true          # (RECOMMENDED) Use Apc if available
+    
+  js:
+    compress:             true          # (RECOMMENDED) Performance : Minifies javascripts and put them into a single compressed file
+    cdn:
+      enabled:            false
+      
+  css:
+    compress:             true          # (RECOMMENDED) Performance : Minifies stylesheets and put them into a single compressed file
+    
+  orm:                                  # Doctrine configuration
+                                        # More configuration : please use ProjectConfiguration::configureDoctrine* methods
+    identifier_fields:    [ name, title, subject, description, id ]   # Fields used to represent a record with a string
+    cache_enabled:        true          # (RECOMMENDED) Use doctrine query cache. No side effect, automatic cache invalidation )
+
+  performance:
+    enable_mailer:        false         # Set to false to disable Swift loading: significant performance boost.
+                                        # If set to false, you can enable the mailer on demand with dm::enableMailer()
+    page_cache:                         # Will cache entire pages and serve them very fast.
+      enabled:            true          # Enable the page cache for all pages
+      life_time:          86400         # Server-side lifetime of the cache in seconds (86400 seconds equals one day)

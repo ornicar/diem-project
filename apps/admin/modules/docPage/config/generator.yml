@@ -1,0 +1,50 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: DocPage
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: doc_page
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields:
+        is_active:
+          label: Active
+        resume:
+          is_big: true
+      list:
+        display:
+          - '=name'
+          - doc_id
+          - _branch
+          - resume
+          - _tags
+          - is_done
+          - is_active
+          - _created_at
+          - _updated_at
+        sort:
+          - position
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+      filter:
+        display:
+          - name
+          - is_active
+          - doc_id
+          - text
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [name, is_active, doc_id, is_done]
+          Text: [resume, text]
+          Tags: [tags]
+        class: DocPageAdminForm
+        fields: {  }
+      edit: ~
+      new: ~
+    sortable: true

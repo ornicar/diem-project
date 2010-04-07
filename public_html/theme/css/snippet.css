@@ -1,0 +1,74 @@
+.snippet.list .t_medium {
+  margin-bottom: 0.5em;
+}
+
+.snippet table {
+  width:100%;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.snippet tbody tr td {
+  padding: 1em 2em 1em 1em;
+  border-bottom: 1px solid #ccc;
+}
+
+.snippet thead tr th {
+  background: #eee;
+  padding: 1em;
+  white-space: nowrap;
+}
+
+.snippet .t_snippet {
+  font-size: 1.2em;
+}
+
+.snippet td img {
+  vertical-align: middle;
+}
+
+.snippet_form li {
+  margin: 0.5em 0;
+}
+
+.snippet_form label {
+  display: block;
+}
+
+.snippet_form input {
+  width: 100%;
+}
+
+.snippet_form textarea {
+  width: 100%;
+  height: 24em;
+  font-family: monospace;
+}
+
+.snippet_form li.element {
+  margin-bottom: 2em;
+}
+
+#snippet_previz_container {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #D3D3D3;
+  overflow-y: auto;
+}
+
+div.snippet .snippet_infos {
+  color: #888;
+  margin: -1em 0 1em 0;
+}
+
+div.snippet a.rss_link {
+  float: right;
+  background: url(../images/rss.png);
+  width: 48px;
+  height: 48px;
+  display: block;
+  font-size: 0;
+  color: #fff;
+  display: block;
+  margin-top: 5px;
+}

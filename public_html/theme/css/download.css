@@ -1,0 +1,42 @@
+div.list_download .element {
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #E4E7B0;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+div.list_download div.clone_commands {
+  margin-top: 5px;
+  background: #000;
+  color: #fff;
+  overflow: auto;
+  padding: 1em;
+}
+
+div.list_download .t_version_baseline {
+  font-family: times, Times New Roman, times-roman, georgia, serif;
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  color: #666;
+  font-style: italic;
+}
+
+div.list_download div.version_links a.button {
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+}
+
+div.list_download div.links p {
+  margin: 0 0 20px 0;
+}
+
+div.list_download p.changelog .link span {
+  background: url(../images/control.png) top left no-repeat;
+  padding-left: 18px;
+}

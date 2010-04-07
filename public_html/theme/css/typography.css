@@ -1,0 +1,90 @@
+a, a:visited {
+  color: #046BCA;
+}
+
+a.no_underline {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a.no_underline:hover {
+  text-decoration: underline;
+}
+
+.t_site, a.t_site {
+  font-size: 0;
+  width: 176px;
+  height: 76px;
+  margin: 1px 0 3px 0;
+  background: transparent url(../images/logo_horiz_green_shadow.png) top left no-repeat;
+  display: block;
+  text-decoration: none;
+}
+
+.t_big {
+  font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-Serif;
+  font-size: 2.6em;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  color: #ED9308;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.t_medium {
+  font-size: 1.7em;
+  color: #868d00;
+  border-bottom: 1px solid #868d00;
+  margin: 1em 0;
+}
+
+.t_medium .link {
+  color: #868d00;
+  text-decoration: none;
+}
+
+a.t_medium {
+  color: #868d00;
+}
+
+.t_medium .link {
+  text-decoration: none;
+}
+
+.t_baseline {
+  font-family: times, Times New Roman, times-roman, georgia, serif;
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  color: #666;
+  font-style: italic;
+  margin: -0.5em 0 1em 2em;
+}
+
+.quiet {
+  color: #888;
+  font-weight: normal;
+}
+
+.little {
+  font-size: 0.9em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+.download_link {
+  background: url(../images/download16.png) top left no-repeat;
+  padding-left: 20px;
+}
+
+.doc_link {
+  background: url(../images/book-bookmark.png) top left no-repeat;
+  padding-left: 20px;
+}

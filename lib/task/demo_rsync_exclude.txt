@@ -1,0 +1,16 @@
+.svn
+/cache/*
+/log/*
+/logs
+/domains
+/home
+/homes
+/cgi-bin
+/data/*
+/public_html/.htaccess
+/public_html/cache
+/public_html/sitemap*.xml
+/public_html/stats/
+/nbproject
+
+/lib/migration/doctrine/*

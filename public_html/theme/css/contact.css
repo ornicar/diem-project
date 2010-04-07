@@ -1,0 +1,38 @@
+div.dm_contact_form li {
+  margin: 0.5em 0;
+}
+
+div.dm_contact_form label {
+  float: left;
+  width: 10em;
+  text-align: right;
+  margin-right: 1em;
+}
+
+div.dm_contact_form textarea {
+  width: 30em;
+  height: 12em;
+}
+
+div.dm_contact_form input.submit {
+  margin-left: 11em;
+}
+
+div.dm_contact_form li.element {
+  margin-bottom: 2em;
+}
+
+div.dm_contact_form .error_list,
+div.dm_contact_form .error_list li {
+  display: inline;
+}
+
+div.dm_contact_form .message .error_list {
+  display: block;
+  margin-left: 11em;
+}
+
+div.dm_contact_form .form_valid {
+  margin: 2em;
+  font-weight: bold;
+}

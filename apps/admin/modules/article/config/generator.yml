@@ -1,0 +1,47 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Article
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: article
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields:
+        is_active:
+          label: Active
+        resume:
+          is_big: true
+      list:
+        display:
+          - '=name'
+          - resume
+          - _tags
+          - is_active
+          - _created_at
+          - _updated_at
+        sort:
+          - created_at
+          - desc
+        table_method: getAdminListQuery
+        table_count_method: ~
+      filter:
+        display:
+          - name
+          - is_active
+          - text
+          - created_by
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [name, is_active, created_by]
+          Text: [resume, text]
+          "Tags & Comments": [tags, comments_list]
+        class: ArticleAdminForm
+        fields: {  }
+      edit: ~
+      new: ~
+    sortable: true

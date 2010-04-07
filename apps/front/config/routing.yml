@@ -1,0 +1,31 @@
+plugin_edit:
+  url:          /plugins/:name/edit
+  params:       { module: dmFront, action: page, dm_page: plugin/edit }
+
+plugin_delete:
+  url:          /plugins/:name/delete
+  params:       { module: plugin, action: delete }
+
+blog_rss:
+  url:          /blog/rss
+  params:       { module: article, action: rss }
+
+snippet_rss:
+  url:          /snippets/rss
+  params:       { module: snippet, action: rss }
+
+plugin_rss:
+  url:          /plugins/rss
+  params:       { module: plugin, action: rss }
+
+current_version:
+  url:          /service/current-version/:branch
+  params:       { module: main, action: currentVersion, branch: false }
+
+report_anonymous_data:
+  url:          /service/report-anonymous-data
+  params:       { module: main, action: reportAnonymousData }
+
+download_latest:
+  url:          /download/latest/:branch
+  params:       { module: version, action: downloadLatest }

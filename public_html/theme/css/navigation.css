@@ -1,0 +1,125 @@
+.bread_crumb li {
+  display: inline;
+  color: #aaa;
+  margin: 5px;
+}
+
+.bread_crumb span {
+  color: #444;
+}
+
+div.main_menu {
+  margin-top: 15px;
+  text-align: right;
+}
+
+div.main_menu li {
+  display: inline;
+}
+
+div.main_menu .link {
+  margin-left: 25px;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #F4F4F4;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+div.main_menu a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #FFFFFF;
+}
+
+div.main_menu .dm_current,
+div.main_menu .dm_parent {
+  color: #fff;
+  text-shadow: 0 0 5px #FFFFFF;
+}
+
+.dm_layout_right .menu .link {
+  display: block;
+  padding: 10px;
+  background: url(../images/box_bg_green.png) bottom left repeat-x;
+  color: #fff;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  text-decoration: none;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.dm_layout_right .menu a.link:hover,
+.dm_layout_right .menu span.link {
+  background-image: url(../images/box_bg_orange.png);
+}
+
+.dm_layout_right .menu ul ul {
+  margin-left: 2em;
+}
+
+.dm_layout_right .menu ul ul .link {
+  background: url(../images/box_bg_green_light.png) top left repeat-x;
+  padding: 5px 0.5em;
+  color: #444;
+  text-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dm_layout_right .menu ul ul a.link:hover,
+.dm_layout_right .menu ul ul span.link {
+  background-image: url(../images/box_bg_orange.png);
+  color: #fff;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.menu .summary {
+}
+
+.menu .summary ul {
+  margin-left: 1.5em;
+}
+
+.menu ul .summary > ul {
+  margin-left: 0;
+}
+
+.menu .summary a {
+  text-decoration: none;
+  padding: 0.3em 0;
+  display: block;
+}
+
+.menu .summary a:hover {
+  text-decoration: underline;
+}
+
+.menu .summary ul ul {
+  font-size: 12px;
+}
+
+.menu .summary ul ul ul {
+  font-size: 11px;
+}
+
+.pager li {
+  display: inline;
+  margin: 0 0.5em;
+}
+.pager {
+  text-align: center;
+  font-weight: bold;
+}
+ .pager li.current .link {
+   font-size: 120%;
+   color: #666;
+ }
