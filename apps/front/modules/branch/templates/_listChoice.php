@@ -1,7 +1,5 @@
 <?php // Vars: $branchPager
 
-echo _link('@project_by_state')->param('state', 'open');
-
 echo 'You are currently browsing documentation for '._tag('strong', $currentBranch->name);
 echo ' - Switch to version';
 
