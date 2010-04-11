@@ -13,6 +13,10 @@ $helper->renderHtmlTag(),
   $helper->renderBodyTag(),
   
     $sf_content,
+
+    _link('http://github.com/diem-project/diem')->text(
+      _media('fork_me_right.png')->alt('Fork Diem on GitHub')->set('#fork_me_right')
+    ).
     
     $helper->renderEditBars(),
     

@@ -32,9 +32,9 @@ generator:
       filter:
         display:
           - name
+          - type
+          - resume
           - is_active
-          - version_id
-          - text
           - created_at
           - updated_at
       form:

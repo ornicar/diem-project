@@ -116,6 +116,13 @@ body.home #dm_content {
   color: #046BCA;
 }
 
+#fork_me_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
 /*
  * Hide accessibility links
  */
