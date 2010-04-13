@@ -31,7 +31,7 @@ class docPageActions extends dmFrontModuleActions
         {
           $this->getUser()->setCulture($culture);
 
-          $dir = dmOs::join($localRepo, $version, $culture, $type);
+          $dir = dmOs::join($localRepo, $version, $type, $culture);
           $files = sfFinder::type('file')->name('/^\d{2}\s-\s.+\.markdown$/')->in($dir);
 
           foreach($files as $file)
@@ -62,6 +62,8 @@ class docPageActions extends dmFrontModuleActions
         }
       }
     }
+
+    $this->get('page_tree_watcher')->update();
 
     return $this->renderText('----<br />done');
   }
