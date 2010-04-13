@@ -6,7 +6,7 @@ class docPageActions extends dmFrontModuleActions
 {
   public function executeUpdateFromGit(dmWebRequest $request)
   {
-    //$this->forward404Unless($request->isMethod('post'));
+    $this->forward404Unless($request->isMethod('post'));
 
     $localRepo = sfConfig::get('sf_root_dir').'/data/diem-docs';
 

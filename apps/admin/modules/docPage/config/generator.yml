@@ -41,7 +41,7 @@ generator:
       form:
         display:
           NONE: [name, is_active, doc_id, is_done]
-          Text: [resume, text]
+          Text: [resume, _text]
           Tags: [tags]
         class: DocPageAdminForm
         fields: {  }
