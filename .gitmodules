@@ -22,3 +22,6 @@
 [submodule "plugins/dmWidgetTwitterPlugin"]
 	path = plugins/dmWidgetTwitterPlugin
 	url = git://github.com/ornicar/dmWidgetTwitterPlugin.git
+[submodule "data/diem-docs"]
+	path = data/diem-docs
+	url = git://github.com/diem-project/diem-docs.git
