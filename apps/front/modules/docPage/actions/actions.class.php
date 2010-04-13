@@ -10,7 +10,12 @@ class docPageActions extends dmFrontModuleActions
 
     $localRepo = sfConfig::get('sf_root_dir').'/data/diem-docs';
 
-    echo 'cd "'.$localRepo.'" && git pull origin master'."\n";
+    exec('cd "'.$localRepo.'" && git pull origin master'."\n", $result, $returnCode);
+
+    if(0 != $returnCode)
+    {
+      throw new dmException('git pull origin master returns '.$returnCode.': '.implode("\n", $result));
+    }
 
     $versions = dmDb::query('Branch b')
     ->select('b.number')
