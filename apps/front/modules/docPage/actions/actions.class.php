@@ -6,11 +6,11 @@ class docPageActions extends dmFrontModuleActions
 {
   public function executeUpdateFromGit(dmWebRequest $request)
   {
-    $this->forward404Unless($request->isMethod('post'));
+    //$this->forward404Unless($request->isMethod('post'));
 
     $localRepo = sfConfig::get('sf_root_dir').'/data/diem-docs';
 
-    $this->getService('filesystem')->execute('cd "'.$localRepo.'" && git pull origin master');
+    echo 'cd "'.$localRepo.'" && git pull origin master'."\n";
 
     $versions = dmDb::query('Branch b')
     ->select('b.number')
@@ -63,7 +63,7 @@ class docPageActions extends dmFrontModuleActions
       }
     }
 
-    $this->get('page_tree_watcher')->update();
+    $this->getService('page_tree_watcher')->update();
 
     return $this->renderText('----<br />done');
   }
