@@ -10,7 +10,7 @@ class docPageActions extends dmFrontModuleActions
 
     $localRepo = sfConfig::get('sf_root_dir').'/data/diem-docs';
 
-    exec('cd "'.$localRepo.'" && git pull origin master'."\n", $result, $returnCode);
+    exec('cd "'.$localRepo.'" && git pull origin master', $result, $returnCode);
 
     if(0 != $returnCode)
     {
