@@ -10,7 +10,7 @@ echo _open('div.doc_page.show');
 
   echo _tag('h2.t_baseline', $docPage->resume);
 
-  echo markdown($docPage->moreRecentText);
+  echo markdown($docPage->text);
   
   if  (!$docPage->isDone)
   {

@@ -12,27 +12,4 @@
  */
 class DocPage extends BaseDocPage
 {
-
-  public function getMoreRecentText()
-  {
-    if($this->get('text'))
-    {
-      return $this->get('text');
-    }
-
-    return $this->getPreviousDocPage()->getMoreRecentText();
-  }
-
-  public function getPreviousDocPage()
-  {
-    return $this->getTable()->createQuery('p')
-    ->withI18n()
-    ->leftJoin('p.Doc d')
-    ->leftJoin('d.Branch b')
-    ->where('pTranslation.name = ?', $this->get('name'))
-    ->andWhere('d.type = ?', $this->get('Doc')->get('type'))
-    ->andWhere('b.number != ?', $this->get('Doc')->get('Branch')->get('number'))
-    ->orderBy('b.number DESC')
-    ->fetchOne();
-  }
 }
