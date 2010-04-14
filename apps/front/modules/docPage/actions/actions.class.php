@@ -4,15 +4,20 @@
  */
 class docPageActions extends dmFrontModuleActions
 {
+  // handle GitHub post-receive hook
   public function executeUpdateFromGit(dmWebRequest $request)
   {
-    //$this->forward404Unless($request->isMethod('post'));
+    $this->forward404Unless($request->isMethod('post'));
 
-    // create a git repo
+    $repoDir = sfConfig::get('sf_root_dir').'/data/diem-docs';
+
+    // include phpGitRepo
     require_once(sfConfig::get('sf_root_dir').'/lib/vendor/php-git-repo/lib/phpGitRepo.php');
-    $repo = new phpGitRepo(sfConfig::get('sf_root_dir').'/data/diem-docs');
 
-    // run the synchronizer
+    // create a git repo instance
+    $repo = new phpGitRepo($repoDir);
+
+    // run the synchronizer passing it the repo instance
     $synchronizer = new gitDocumentationSynchronizer($repo);
     $synchronizer->execute();
 
