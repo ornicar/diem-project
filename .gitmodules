@@ -25,3 +25,6 @@
 [submodule "data/diem-docs"]
 	path = data/diem-docs
 	url = git://github.com/diem-project/diem-docs.git
+[submodule "lib/vendor/php-git-repo"]
+	path = lib/vendor/php-git-repo
+	url = git://github.com/ornicar/php-git-repo.git

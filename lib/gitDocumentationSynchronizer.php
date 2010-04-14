@@ -4,11 +4,13 @@
  * Pull documentation from Git server to a local Git repo,
  * and update documentation in database
  */
-class GitDocumentationSynchronizer extends dmConfigurable
+class gitDocumentationSynchronizer extends dmConfigurable
 {
-  public function __construct(array $options)
+  protected $repo;
+  
+  public function __construct(phpGitRepo $repo)
   {
-    $this->configure($options);
+    $this->repo = $repo;
   }
 
   /**
@@ -16,60 +18,48 @@ class GitDocumentationSynchronizer extends dmConfigurable
    */
   public function execute()
   {
-    $this->configure();
+    $this->repo->git('fetch origin');
     
-    $this->checkLocalRepo();
+    foreach($this->getBranches() as $branch)
+    {
+      $this->checkoutBranch($branch);
 
-    $this->pullFromRemote();
-
-    $this->updateDatabase();
+      $this->updateBranch($branch);
+      
+      $this->updateDatabase($branch);
+    }
   }
 
-  /**
-   * Verify that the local repo is a valid Git repo
-   */
-  protected  function checkLocalRepo()
+  protected function getBranches()
   {
-    if(!is_dir($this->getOption('local_repo_dir').'/.git'))
-    {
-      throw new RuntimeException($this->getOption('local_repo_dir').' is not a valid git repository');
-    }
+    return dmDb::query('Branch b')->select('b.number')->fetchFlat();
   }
 
   /**
    * Pull changes from remote repo to local repo
    */
-  protected function pullFromRemote()
+  protected function checkoutBranch($branch)
   {
-    $command = sprintf(
-      'cd %s && git pull %s %s',
-      escapeshellarg($this->getOption('local_repo_dir')),
-      escapeshellarg($this->getOption('remote')),
-      escapeshellarg($this->getOption('branch'))
-    );
-
-    exec($command, $output, $returnVar);
-
-    if(0 != $returnVar)
+    if($this->repo->hasBranch($branch))
     {
-      throw new RuntimeException(sprintf(
-        '%s returns %s: %s',
-        $command,
-        $returnVar,
-        implode("\n", $output)
-      ));
+      $this->repo->git('checkout '.$branch);
     }
+    else
+    {
+      $this->repo->git('checkout -b '.$branch.' origin/'.$branch);
+    }
+  }
+
+  protected function updateBranch($branch)
+  {
+    $this->repo->git('pull origin '.$branch);
   }
 
   /**
    * Update changed documentation pages in database
    */
-  protected function updateDatabase()
+  protected function updateDatabase($branch)
   {
-    $versions = dmDb::query('Branch b')
-    ->select('b.number')
-    ->fetchFlat();
-
     $types = dmDb::query('Doc d')
     ->select('d.type')
     ->distinct()
@@ -78,39 +68,36 @@ class GitDocumentationSynchronizer extends dmConfigurable
     $cultures         = sfConfig::get('dm_i18n_cultures');
     $originalCulture  = sfDoctrineRecord::getDefaultCulture();
 
-    foreach($versions as $version)
+    foreach($types as $type)
     {
-      foreach($types as $type)
+      foreach($cultures as $culture)
       {
-        foreach($cultures as $culture)
+        sfDoctrineRecord::setDefaultCulture($culture);
+
+        $dir    = dmOs::join($this->repo->getDir(), $type, $culture);
+        $files  = sfFinder::type('file')->name('/^\d{2}\s-\s.+\.markdown$/')->in($dir);
+
+        foreach($files as $file)
         {
-          sfDoctrineRecord::setDefaultCulture($culture);
+          $docName = preg_replace('/^\d{2}\s-\s(.+)\.markdown$/', '$1', basename($file));
 
-          $dir    = dmOs::join($this->getOption('local_repo_dir'), $version, $type, $culture);
-          $files  = sfFinder::type('file')->name('/^\d{2}\s-\s.+\.markdown$/')->in($dir);
+          $docRecord = dmDb::query('DocPage dp')
+          ->withI18n()
+          ->innerJoin('dp.Doc doc')
+          ->innerJoin('doc.Branch branch')
+          ->where('branch.number = ?', $branch)
+          ->andWhere('doc.type = ?', $type)
+          ->andWhere('dpTranslation.name = ?', $docName)
+          ->fetchOne();
 
-          foreach($files as $file)
+          if($docRecord)
           {
-            $docName = preg_replace('/^\d{2}\s-\s(.+)\.markdown$/', '$1', basename($file));
+            $docText = file_get_contents($file);
 
-            $docRecord = dmDb::query('DocPage dp')
-            ->withI18n()
-            ->innerJoin('dp.Doc doc')
-            ->innerJoin('doc.Branch branch')
-            ->where('branch.number = ?', $version)
-            ->andWhere('doc.type = ?', $type)
-            ->andWhere('dpTranslation.name = ?', $docName)
-            ->fetchOne();
-
-            if($docRecord)
+            if($docRecord->text != $docText)
             {
-              $docText = file_get_contents($file);
-
-              if($docRecord->text != $docText)
-              {
-                $docRecord->text = $docText;
-                $docRecord->save();
-              }
+              $docRecord->text = $docText;
+              $docRecord->save();
             }
           }
         }
