@@ -1,5 +1,11 @@
 parameters:
 
+  git_documentation_synchronizer.class: gitDocumentationSynchronizer
+  git_documentation_synchronizer.options:
+    local_repo_dir:
+    remote:                   origin
+    branch:                   master
+
   cache_cleaner.options:
     safe_models:              [ Comment, DmSentMail, DmError, DmRedirect, DmUser, DmPermission, DmGroup, DmGroupPermission, DmUserPermission, DmUserGroup, DmRememberKey, DmMailTemplate ]
     
@@ -7,3 +13,10 @@ parameters:
   
   page_helper.options:
     widget_css_class_pattern: '%%module%%_%%action%% %%module%% %%action%%'
+
+services:
+
+  git_documentation_synchronizer:
+    class:                    %git_documentation_synchronizer.class%
+    shared:                   false
+    arguments:                [%git_documentation_synchronizer.options%]
