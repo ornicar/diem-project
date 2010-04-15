@@ -12,13 +12,15 @@ class docPageComponents extends dmFrontModuleComponents
 
   public function executeListByDoc()
   {
-    $query = $this->getListQuery();
+    $query = $this->getListQuery('dp')
+    ->leftJoin('dp.Doc doc')
+    ->leftJoin('doc.Branch');
     $this->docPagePager = $this->getPager($query);
   }
 
   public function executeShow()
   {
-    $query = $this->getShowQuery();
+    $query = $this->getShowQuery('dp');
     
     $this->docPage = $this->getRecord($query);
     

@@ -27,3 +27,5 @@ echo _open('nav.doc_page.list_by_doc');
  echo $docPagePager->renderNavigationBottom();
 
 echo _close('nav');
+
+echo _tag('hr').markdown('The documentation is [hosted on GitHub](http://github.com/diem-project/diem-docs/tree/'.$docPage->Doc->Branch->number.' "Diem documentation on GitHub"). Feel free to submit issues and patches!');

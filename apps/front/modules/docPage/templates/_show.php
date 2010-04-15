@@ -40,3 +40,5 @@ echo _open('div.doc_page.show');
   );
   
 echo _close('div');
+
+echo _tag('hr').markdown('The documentation is [hosted on GitHub](http://github.com/diem-project/diem-docs/tree/'.$docPage->Doc->Branch->number.' "Diem documentation on GitHub"). Feel free to submit issues and patches!');

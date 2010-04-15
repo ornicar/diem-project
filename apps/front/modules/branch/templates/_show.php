@@ -72,4 +72,6 @@ echo _close('div');
 
 echo _tag('div.clearfix');
 
+echo markdown('The documentation is [hosted on GitHub](http://github.com/diem-project/diem-docs/tree/'.$branch->number.' "Diem documentation on GitHub"). Feel free to submit issues and patches!');
+
 echo markdown($branch->whatsnew);

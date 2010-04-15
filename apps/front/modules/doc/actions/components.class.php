@@ -14,7 +14,7 @@ class docComponents extends dmFrontModuleComponents
 
   public function executeShow()
   {
-    $query = $this->getShowQuery();
+    $query = $this->getShowQuery('d');
     $this->doc = $this->getRecord($query);
   }
 
