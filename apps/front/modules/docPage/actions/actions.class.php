@@ -21,6 +21,10 @@ class docPageActions extends dmFrontModuleActions
     $synchronizer = new gitDocumentationSynchronizer($repo);
     $synchronizer->execute();
 
+    $this->getService('cache_cleaner')
+    ->setOption('applications', array('front'))
+    ->clearTemplate();
+
     return $this->renderText('done');
   }
 
