@@ -159,10 +159,6 @@ DocPage:
     DmTaggable:
     I18n:
       fields:         [ name, resume, text, is_active, is_done ]
-      actAs:
-        DmBlameable:
-        DmVersionable:
-          fields:     ~
   columns:
     doc_id:           { type: integer, notnull: true }
     name:             { type: string(255), notnull: true }

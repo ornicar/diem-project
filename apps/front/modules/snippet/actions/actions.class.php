@@ -29,9 +29,9 @@ class snippetActions extends myFrontModuleActions
       $item = new sfFeedItem();
       $item->setTitle($record->name);
       $item->setLink($this->getHelper()->link($record)->getAbsoluteHref());
-      $item->setAuthorName($record->createdBy);
+      $item->setAuthorName(dmString::escape($record->createdBy));
       $item->setPubdate($record->getDateTimeObject('created_at')->format('U'));
-      $item->setUniqueId($record->name.' ('.$record->id.')');
+      $item->setUniqueId(dmString::escape($record->name).' ('.$record->id.')');
       
       $item->setDescription(
         $record->getMarkdownText($this->getService('markdown'))

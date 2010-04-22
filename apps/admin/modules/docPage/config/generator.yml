@@ -23,8 +23,8 @@ generator:
           - _tags
           - is_done
           - is_active
-          - _created_at
-          - _updated_at
+          - created_at
+          - updated_at
         sort:
           - position
           - asc
