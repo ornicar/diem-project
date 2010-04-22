@@ -16,7 +16,6 @@ public_html/dev.php
 public_html/admin_dev.php
 lib/*/doctrine/base
 lib/*/doctrine/dm*Plugin/base
-lib/migration/doctrine/*
 /apps/front/config/app.yml
 nbproject
 .bash_history
