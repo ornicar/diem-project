@@ -22,6 +22,10 @@ class frontConfiguration extends dmFrontApplicationConfiguration
       {
         $enable = false;
       }
+      if(0 === strncmp($uri, '/contact', 8))
+      {
+        $enable = false;
+      }
     }
 
     return $enable;
