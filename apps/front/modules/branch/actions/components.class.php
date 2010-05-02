@@ -28,15 +28,19 @@ class branchComponents extends dmFrontModuleComponents
     ->withI18n()
     ->leftJoin('p.Doc d')
     ->where('d.type = ?', 'tuto')
+    ->andWhere('d.branch_id = ?', $this->branch->id)
     ->orderBy('p.position ASC')
     ->fetchOne();
     $this->howTo = dmDb::query('Doc d')
     ->withI18n()
     ->where('d.type = ?', 'howto')
+    ->andWhere('d.branch_id = ?', $this->branch->id)
     ->fetchOne();
     $this->openSourceProjects = dmDb::query('DocPage p')
     ->withI18n()
+    ->leftJoin('p.Doc d')
     ->where('pTranslation.name = ?', 'Open source projects')
+    ->andWhere('d.branch_id = ?', $this->branch->id)
     ->fetchOne();
   }
 
