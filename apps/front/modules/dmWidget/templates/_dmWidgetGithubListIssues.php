@@ -1,4 +1,4 @@
-<?php use_helper('Text');
+<?php use_helper('Text', 'Date');
 
 /*
  * An $issue is an array containing: http://develop.github.com/p/issues.html#list_a_projects_issues
@@ -29,10 +29,7 @@ foreach($issues as $issue)
       format_date($issue['created_at'], 'd/MM H:mm').
       ' by '.
       _link('http://github.com/'.$issue['user'])->text(escape($issue['user']))
-    ).
-
-    // render issue text
-    _tag('p.issue_text', auto_link_text(escape($issue['body'])))
+    )
   
   );
 }
