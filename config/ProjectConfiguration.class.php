@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__).'/require_diem.php';
+require_once dirname(__FILE__).'/../lib/vendor/diem';
 dm::start();
 
 class ProjectConfiguration extends dmProjectConfiguration
