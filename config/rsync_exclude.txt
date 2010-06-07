@@ -6,41 +6,19 @@
 /homes
 /cgi-bin
 /config/databases.yml
-/config/ProjectConfiguration.class.php
 /data/*
 /symfony-*
+/public_html/cache/*
 /public_html/.htaccess
+/public_html/*Plugin
+/public_html/sf
 /public_html/uploads/*
-/public_html/dm
-/public_html/cache
+/public_html/stats/*
+/public_html/sitemap*.xml
 /public_html/dev.php
 /public_html/admin_dev.php
-/public_html/sitemap*.xml
-/public_html/stats/
-/nbproject
-
-# symlinks
-/public_html/*Plugin
-
-/lib/migration/doctrine/*
 
 # recaptcha keys
 /apps/front/config/app.yml
 
-# SCM files
-.arch-params
-.bzr
-_darcs
 .git
-.hg
-.monotone
-.svn
-CVS
-
-# System files
-.bash_history
-.bashrc
-.profile
-.bash_logout
-.stats-htpasswd
-.viminfo
