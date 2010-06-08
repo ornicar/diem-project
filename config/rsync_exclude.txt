@@ -17,6 +17,7 @@
 /public_html/sitemap*.xml
 /public_html/dev.php
 /public_html/admin_dev.php
+/web # don't override symbolic link on kapp03
 
 # recaptcha keys
 /apps/front/config/app.yml
