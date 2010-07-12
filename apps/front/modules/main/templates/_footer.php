@@ -48,7 +48,7 @@ echo _tag('div.clearfix',
 
   _tag('div.more_links', _tag('nav.more_links_inner',
     _tag('p', 'The Diem project.<br />Powered by Diem '.DIEM_VERSION).
-    _link('tour/license')->currentSpan(false).' | '.
+    _link('http://diem-experts.com/')->text('Support').' | '.
     _link('tour/about')->currentSpan(false).' | '.
     _link('main/contact')->currentSpan(false)->text(__('Contact')).' | '.
     _link('main/sitemap')->currentSpan(false).
